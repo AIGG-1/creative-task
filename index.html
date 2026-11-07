@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Your Name — Creative Lead</title>
-<meta name="description" content="Creative Lead & Producer with a media-buying background. 10,000+ ad creatives, $1–2 trial CPA in the US, scaled on $50K+ spend. Paid, organic and AI content.">
+<meta name="description" content="Creative Lead & Producer with a media-buying background. Ad creatives with $1–2 trial CPA in the US that hold $50K+ spend. Paid, organic and AI content.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
+/* Layout: hero + KPI board, then each section in its own visual format (lanes, story, ledger, type wall, grid, loop), tied together by one section header and one palette */
 :root{
   --bg:#0a0b0d;
-  --bg-2:#111317;
+  --bg-2:#101216;
   --card:#14171c;
   --line:#23272f;
   --text:#eef0f3;
@@ -19,6 +20,7 @@
   --accent:#c6ff3d;
   --accent-ink:#0a0b0d;
   --accent-2:#5ee1ff;
+  --accent-3:#b892ff;
   --radius:18px;
   --max:1200px;
   --mono:"JetBrains Mono",ui-monospace,monospace;
@@ -30,12 +32,14 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block}
+h1,h2,h3{text-wrap:balance}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 .wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
 @media(max-width:600px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
 
 /* NAV */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,11,13,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,11,13,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .logo{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
 .logo i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);display:inline-block}
@@ -50,128 +54,27 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 nav .btn{padding:9px 16px;font-size:14px}
 
 /* HERO */
-.hero{padding:96px 0 64px;position:relative}
+.hero{padding:88px 0 64px;position:relative}
 .hero::before{content:"";position:absolute;inset:-200px 0 auto 50%;width:900px;height:700px;transform:translateX(-30%);background:radial-gradient(closest-side,rgba(198,255,61,.12),transparent 70%);pointer-events:none}
-.tag{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
-.tag::before{content:"";width:24px;height:1px;background:var(--accent)}
-h1{font-size:clamp(40px,7.2vw,88px);line-height:1;letter-spacing:-.04em;font-weight:700;margin:22px 0 26px;max-width:14ch}
+.tag{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.tag::before{content:"";width:24px;height:1px;background:currentColor}
+h1{font-size:clamp(36px,6.2vw,76px);line-height:1.02;letter-spacing:-.04em;font-weight:700;margin:22px 0 26px;max-width:17ch}
 h1 em{font-style:normal;color:var(--accent)}
-.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:60ch}
+.lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:60ch}
 .lead b{color:var(--text);font-weight:500}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
 
 /* KPI BOARD */
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:64px}
 .kpi{background:var(--bg-2);padding:28px 26px;position:relative}
-.kpi .v{font-family:var(--mono);font-weight:600;font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;line-height:1.05;color:var(--text)}
+.kpi .v{font-family:var(--mono);font-weight:600;font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;line-height:1.05;font-variant-numeric:tabular-nums}
 .kpi .v .u{color:var(--accent)}
-.kpi .l{color:var(--muted);font-size:14px;margin-top:10px;max-width:28ch}
+.kpi .l{color:var(--muted);font-size:14px;margin-top:10px;max-width:30ch}
 .kpi .chip{position:absolute;top:22px;right:22px;font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
 .kpi .chip.paid{color:var(--accent);border-color:rgba(198,255,61,.35)}
 .kpi .chip.org{color:var(--accent-2);border-color:rgba(94,225,255,.35)}
 @media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:520px){.kpis{grid-template-columns:1fr}}
-
-/* SECTIONS */
-section{padding:96px 0;border-top:1px solid var(--line)}
-.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
-h2{font-size:clamp(30px,4.4vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:700;max-width:18ch}
-.sec-head p{color:var(--muted);max-width:44ch}
-
-/* PILLARS */
-.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:16px}
-.pillar .n{font-family:var(--mono);font-size:13px;color:var(--muted)}
-.pillar h3{font-size:24px;letter-spacing:-.02em}
-.pillar p{color:var(--muted);font-size:15px}
-.pillar ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;margin-top:auto;padding-top:8px}
-.pillar li{display:flex;gap:10px}
-.pillar li::before{content:"→";color:var(--accent);font-family:var(--mono)}
-.pillar.org li::before{color:var(--accent-2)}
-.pillar .metric{font-family:var(--mono);font-size:14px;padding:12px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
-.pillar .metric b{color:var(--accent)}
-.pillar.org .metric b{color:var(--accent-2)}
-@media(max-width:900px){.pillars{grid-template-columns:1fr}}
-
-/* CASES */
-.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:22px;transition:border-color .2s}
-.case:hover{border-color:#3a404b}
-.case-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.case-type{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
-.case.org .case-type{color:var(--accent-2)}
-.case-geo{font-family:var(--mono);font-size:12px;color:var(--muted)}
-.case h3{font-size:24px;letter-spacing:-.02em;line-height:1.2}
-.case-rows{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px}
-.case-rows dt{color:var(--muted);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding-top:3px}
-.case-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:12px;overflow:hidden;margin-top:auto}
-.case-nums div{background:var(--bg);padding:16px 14px}
-.case-nums b{display:block;font-family:var(--mono);font-size:22px;letter-spacing:-.02em}
-.case-nums span{font-size:12px;color:var(--muted)}
-@media(max-width:900px){.cases{grid-template-columns:1fr}}
-@media(max-width:420px){.case-nums b{font-size:18px}}
-
-/* NICHES */
-.niches{display:flex;flex-wrap:wrap;gap:10px}
-.niche{padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:15px;background:var(--bg-2);transition:border-color .2s,color .2s}
-.niche:hover{border-color:var(--accent);color:var(--accent)}
-
-/* WORK / VIDEOS */
-.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
-.filter{font-family:var(--mono);font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
-.filter.on{background:var(--text);color:var(--bg);border-color:var(--text)}
-.videos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:1000px){.videos{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:720px){.videos{grid-template-columns:repeat(2,1fr)}}
-.vid{display:flex;flex-direction:column;gap:10px}
-.vid-frame{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer}
-.vid-frame.h{aspect-ratio:16/9}
-.vid-frame.sq{aspect-ratio:1/1}
-.vid-frame img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s,transform .4s}
-.vid-frame:hover img{opacity:1;transform:scale(1.03)}
-.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.play{position:absolute;inset:0;display:grid;place-items:center}
-.play span{width:56px;height:56px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
-.play span::after{content:"";border-left:16px solid var(--accent-ink);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
-.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px;cursor:default;
-  background:radial-gradient(120% 70% at 30% 0%,color-mix(in srgb,var(--tint) 22%,transparent),transparent 70%),linear-gradient(180deg,var(--card),var(--bg-2))}
-.vid-ph .t{align-self:flex-start;font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;color:var(--tint);border:1px solid color-mix(in srgb,var(--tint) 40%,transparent);background:rgba(10,11,13,.5)}
-.vid-ph .c{align-self:center;width:52px;height:52px;border-radius:50%;border:1px solid color-mix(in srgb,var(--tint) 50%,transparent);display:grid;place-items:center}
-.vid-ph .c::after{content:"";border-left:14px solid var(--tint);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;opacity:.8}
-.vid-ph .bars{display:flex;flex-direction:column;gap:6px}
-.vid-ph .bars i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.08)}
-.vid-ph .bars i:first-child{width:70%}.vid-ph .bars i:last-child{width:45%}
-.vid-ph .s{font-family:var(--mono);font-size:11px;color:var(--muted)}
-.vid-frame:has(.vid-ph){cursor:default}
-.vid-meta{font-size:14px;display:flex;flex-direction:column;gap:2px}
-.vid-meta b{font-weight:500}
-.vid-meta span{color:var(--muted);font-family:var(--mono);font-size:12px}
-.vid.hide{display:none}
-
-/* PROCESS */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
-.step{padding:28px 22px;border-right:1px solid var(--line);background:var(--bg-2);display:flex;flex-direction:column;gap:12px}
-.step:last-child{border-right:0}
-.step .n{font-family:var(--mono);color:var(--accent);font-size:13px}
-.step h4{font-size:19px;letter-spacing:-.01em}
-.step p{color:var(--muted);font-size:14px}
-@media(max-width:1000px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}}
-
-.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
-.stack-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
-.stack-col h5{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px;font-weight:400}
-.stack-col ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.stack-col li{font-size:14px;padding:6px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
-@media(max-width:1000px){.stack{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.stack{grid-template-columns:1fr}}
-
-/* CONTACT */
-.contact{text-align:center;padding:120px 0}
-.contact h2{margin:0 auto 20px;max-width:16ch}
-.contact p{color:var(--muted);max-width:52ch;margin:0 auto 36px}
-.contact .hero-cta{justify-content:center}
-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;font-family:var(--mono)}
-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 /* MARQUEE */
 .marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--bg-2)}
@@ -180,7 +83,163 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .marquee-track i{color:var(--accent);font-style:normal}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
-/* REVEAL */
+/* SHARED SECTION HEADER — the thread that ties all blocks together */
+section{padding-block:104px}
+section.band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:24px 48px;align-items:end;margin-bottom:56px}
+.sh .tag{grid-column:1/-1}
+h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font-weight:700}
+.sh p{color:var(--muted)}
+@media(max-width:860px){.sh{grid-template-columns:1fr}}
+
+/* 1 · LANES (what I do) */
+.lanes{border-top:1px solid var(--line)}
+.lane{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr) minmax(0,200px);gap:32px;padding:40px 0;border-bottom:1px solid var(--line);align-items:start;--tint:var(--accent)}
+.lane.org{--tint:var(--accent-2)}
+.lane.ai{--tint:var(--accent-3)}
+.lane-k{font-size:clamp(44px,6vw,84px);font-weight:700;letter-spacing:-.05em;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--tint);transition:color .3s}
+.lane:hover .lane-k{color:var(--tint)}
+.lane-body h3{font-size:24px;letter-spacing:-.02em;margin-bottom:10px}
+.lane-body p{color:var(--muted);max-width:52ch}
+.lane-body ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.lane-body li{font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);color:var(--text)}
+.lane-m{text-align:right}
+.lane-m b{display:block;font-family:var(--mono);font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;color:var(--tint);line-height:1.1}
+.lane-m span{font-size:13px;color:var(--muted)}
+@media(max-width:900px){.lane{grid-template-columns:1fr;gap:16px}.lane-m{text-align:left}}
+
+/* 2 · FEATURED CASE (story) */
+.feature{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--bg)}
+.feature-l{padding:44px;display:flex;flex-direction:column;gap:22px;border-right:1px solid var(--line)}
+.meta{display:flex;gap:8px;flex-wrap:wrap}
+.meta span{font-family:var(--mono);font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.meta span:first-child{color:var(--accent);border-color:rgba(198,255,61,.35)}
+.feature h3{font-size:clamp(26px,3vw,36px);letter-spacing:-.03em;line-height:1.1}
+.feature-l>p{color:var(--muted)}
+.story{list-style:none;display:flex;flex-direction:column;margin-top:8px}
+.story li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:16px;padding-bottom:22px;position:relative}
+.story li::before{content:"";position:absolute;left:13px;top:22px;bottom:0;width:1px;background:var(--line)}
+.story li:last-child{padding-bottom:0}
+.story li:last-child::before{display:none}
+.story .dot{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--bg)}
+.story li.hot .dot{border-color:var(--accent);color:var(--accent)}
+.story b{display:block;font-weight:600}
+.story span{color:var(--muted);font-size:15px}
+.feature-r{display:flex;flex-direction:column;background:var(--bg-2)}
+.big{flex:1;background:var(--accent);color:var(--accent-ink);padding:44px;display:flex;flex-direction:column;justify-content:flex-end;gap:12px}
+.big small{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;opacity:.7}
+.big strong{font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em;font-weight:700}
+.big p{font-size:17px;max-width:38ch;font-weight:500}
+.fnums{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
+.fnums div{background:var(--bg-2);padding:28px 26px}
+.fnums b{display:block;font-family:var(--mono);font-size:28px;letter-spacing:-.03em}
+.fnums span{font-size:13px;color:var(--muted)}
+@media(max-width:900px){.feature{grid-template-columns:1fr}.feature-l{border-right:0;border-bottom:1px solid var(--line);padding:28px}.big{padding:28px}}
+
+/* 3 · LEDGER (other cases) */
+.ledger{margin-top:56px}
+.ledger-h,.row{display:grid;grid-template-columns:minmax(0,190px) minmax(0,1fr) repeat(3,minmax(0,120px));gap:24px;align-items:center}
+.ledger-h{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding:0 0 14px;border-bottom:1px solid var(--line)}
+.ledger-h span:nth-child(3){grid-column:3/-1;text-align:right}
+.row{padding:28px 0;border-bottom:1px solid var(--line);--tint:var(--accent)}
+.row.org{--tint:var(--accent-2)}
+.row.prod{--tint:var(--accent-3)}
+.row .type{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--tint);display:flex;align-items:center;gap:10px}
+.row .type::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--tint)}
+.row h4{font-size:19px;letter-spacing:-.01em;margin-bottom:4px}
+.row p{color:var(--muted);font-size:14px}
+.row .n{text-align:right}
+.row .n b{display:block;font-family:var(--mono);font-size:22px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.row .n span{font-size:12px;color:var(--muted)}
+@media(max-width:900px){
+  .ledger-h{display:none}
+  .row{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .row .type,.row .d{grid-column:1/-1}
+  .row .n{text-align:left;padding-top:6px;border-top:1px solid var(--line)}
+}
+
+/* 4 · NICHE WALL */
+.wall{display:flex;flex-wrap:wrap;gap:4px 0;font-size:clamp(26px,4.2vw,52px);font-weight:600;letter-spacing:-.035em;line-height:1.2}
+.wall span{color:var(--muted);transition:color .2s}
+.wall span:nth-child(3n+1){color:var(--text)}
+.wall span:hover{color:var(--accent)}
+.wall span::after{content:"/";color:var(--line);margin:0 .35em;font-weight:400}
+.wall span:last-child::after{content:""}
+
+/* 5 · WORK */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter{font-family:var(--mono);font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
+.filter.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.videos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.videos{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.videos{grid-template-columns:repeat(2,1fr)}}
+.vid{display:flex;flex-direction:column;gap:10px;min-width:0}
+.vid-frame{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer}
+.vid-frame.h{aspect-ratio:16/9}
+.vid-frame.sq{aspect-ratio:1/1}
+.vid-frame img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s,transform .4s}
+.vid-frame:hover img{opacity:1;transform:scale(1.03)}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{position:absolute;inset:0;display:grid;place-items:center}
+.play span{width:56px;height:56px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.play span::after{content:"";border-left:16px solid var(--accent-ink);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px;
+  background:radial-gradient(120% 70% at 30% 0%,color-mix(in srgb,var(--tint) 22%,transparent),transparent 70%),linear-gradient(180deg,var(--card),var(--bg))}
+.vid-ph .t{align-self:flex-start;font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;color:var(--tint);border:1px solid color-mix(in srgb,var(--tint) 40%,transparent);background:rgba(10,11,13,.5)}
+.vid-ph .c{align-self:center;width:52px;height:52px;border-radius:50%;border:1px solid color-mix(in srgb,var(--tint) 50%,transparent);display:grid;place-items:center}
+.vid-ph .c::after{content:"";border-left:14px solid var(--tint);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;opacity:.8}
+.vid-ph .bars{display:flex;flex-direction:column;gap:6px}
+.vid-ph .bars i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.08)}
+.vid-ph .bars i:first-child{width:70%}.vid-ph .bars i:nth-child(2){width:45%}
+.vid-ph .s{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.vid-frame:has(.vid-ph){cursor:default}
+.vid-meta{font-size:14px;display:flex;flex-direction:column;gap:2px}
+.vid-meta b{font-weight:500}
+.vid-meta span{color:var(--muted);font-family:var(--mono);font-size:12px}
+.vid.hide{display:none}
+
+/* 6 · LOOP (process) */
+.loop{position:relative;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;padding-bottom:56px}
+.node{display:flex;flex-direction:column;gap:12px;position:relative}
+.node .ring{width:52px;height:52px;border-radius:50%;border:1px solid var(--accent);display:grid;place-items:center;font-family:var(--mono);font-size:13px;color:var(--accent);background:var(--bg);position:relative;z-index:1}
+.node:not(:nth-child(5))::after{content:"";position:absolute;top:26px;left:60px;right:-8px;height:1px;background:linear-gradient(90deg,var(--accent),var(--line))}
+.node h4{font-size:19px;letter-spacing:-.01em}
+.node p{color:var(--muted);font-size:14px}
+.return{position:absolute;left:26px;right:calc((100% - 64px) / 5 - 26px);bottom:0;height:30px;border:1px dashed var(--line);border-top:0;border-radius:0 0 16px 16px}
+.return span{position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);background:var(--bg-2);padding:0 12px;font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+@media(max-width:1000px){
+  .loop{grid-template-columns:1fr;gap:0;padding-bottom:0;padding-left:0}
+  .node{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 18px;padding-bottom:26px}
+  .node .ring{grid-row:span 2}
+  .node:not(:nth-child(5))::after{top:52px;left:26px;right:auto;bottom:0;width:1px;height:auto;background:var(--line)}
+  .return{display:none}
+}
+.loop-note{display:none;font-family:var(--mono);font-size:12px;color:var(--muted);padding-left:70px}
+@media(max-width:1000px){.loop-note{display:block}}
+
+.spec{margin-top:72px;display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:24px 48px}
+.spec h3{font-size:22px;letter-spacing:-.02em}
+.spec h3 small{display:block;font-family:var(--mono);font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0;margin-top:8px}
+.spec dl{display:grid;grid-template-columns:minmax(0,200px) minmax(0,1fr);border-top:1px solid var(--line)}
+.spec dt,.spec dd{padding:16px 0;border-bottom:1px solid var(--line)}
+.spec dt{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding-top:19px}
+.spec dd{font-size:16px}
+@media(max-width:800px){.spec{grid-template-columns:1fr}.spec dl{grid-template-columns:1fr}.spec dt{border-bottom:0;padding-bottom:0}.spec dd{padding-top:6px}}
+
+/* CONTACT */
+.contact{padding-block:120px}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:center}
+.contact h2{font-size:clamp(36px,5.4vw,68px);margin:20px 0}
+.contact p{color:var(--muted);max-width:48ch}
+.brief{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:var(--bg-2)}
+.brief h5{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:400;margin-bottom:16px}
+.brief ol{list-style:none;counter-reset:b;display:flex;flex-direction:column;gap:12px}
+.brief li{counter-increment:b;display:flex;gap:14px;font-size:16px}
+.brief li::before{content:counter(b);font-family:var(--mono);font-size:12px;color:var(--accent);width:22px;height:22px;border:1px solid rgba(198,255,61,.35);border-radius:6px;display:grid;place-items:center;flex:none;margin-top:1px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;font-family:var(--mono)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -190,7 +249,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="wrap">
     <a href="#top" class="logo"><i></i>Your Name</a>
     <div class="nav-links">
-      <a href="#results">Results</a>
+      <a href="#services">Services</a>
       <a href="#cases">Cases</a>
       <a href="#work">Work</a>
       <a href="#process">Process</a>
@@ -202,20 +261,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header class="hero" id="top">
   <div class="wrap">
     <span class="tag">Creative Lead · Creative Producer</span>
-    <h1>Creatives that <em>scale</em>, not just look good.</h1>
+    <h1>Ad creatives with <em>$1–2 trial CPA</em> in the US, scaled on $50K+</h1>
     <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
     <div class="hero-cta">
       <a class="btn btn-accent" href="#contact">Discuss a project</a>
-      <a class="btn btn-ghost" href="#work">See the work ↓</a>
+      <a class="btn btn-ghost" href="#cases">See the cases ↓</a>
     </div>
 
     <div class="kpis" id="results">
-      <div class="kpi rv"><span class="chip">volume</span><div class="v"><span data-count="10000">10,000</span><span class="u">+</span></div><div class="l">creatives produced personally</div></div>
-      <div class="kpi rv"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
-      <div class="kpi rv"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">CPA per purchase</div></div>
-      <div class="kpi rv"><span class="chip paid">paid</span><div class="v"><span class="u">$</span><span data-count="50">50</span>K<span class="u">+</span></div><div class="l">spend that winning creatives held while scaling</div></div>
-      <div class="kpi rv"><span class="chip org">organic</span><div class="v"><span data-count="25">25</span>K<span class="u">+</span></div><div class="l">subscribers on an AI-driven channel network, grown from zero</div></div>
-      <div class="kpi rv"><span class="chip org">organic</span><div class="v"><span data-count="12">12</span>M<span class="u">+</span></div><div class="l">views in a single month</div></div>
+      <div class="kpi"><span class="chip">volume</span><div class="v">10,000<span class="u">+</span></div><div class="l">creatives produced personally</div></div>
+      <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
+      <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">CPA per purchase</div></div>
+      <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>50K<span class="u">+</span></div><div class="l">spend my creatives hold and keep scaling past, without burning out early</div></div>
+      <div class="kpi"><span class="chip org">organic</span><div class="v">25K<span class="u">+</span></div><div class="l">subscribers on an AI-driven channel network, grown from zero</div></div>
+      <div class="kpi"><span class="chip org">organic</span><div class="v">12M<span class="u">+</span></div><div class="l">views in a single month</div></div>
     </div>
   </div>
 </header>
@@ -224,177 +283,182 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div class="marquee-track" id="marquee"></div>
 </div>
 
-<!-- WHAT I DO -->
+<!-- 1 · LANES -->
 <section id="services">
   <div class="wrap">
-    <div class="sec-head rv">
-      <h2>One lead for paid, organic and content.</h2>
-      <p>Most creative leads are good at one of these. Coming from media buying, I run all three with the same thinking: hypothesis, test, numbers, scale.</p>
+    <div class="sh">
+      <span class="tag">What I do</span>
+      <h2>One lead for paid, organic and content</h2>
+      <p>Coming from media buying, I run all three with the same loop: hypothesis, test, numbers, scale.</p>
     </div>
-    <div class="pillars">
-      <div class="pillar rv">
-        <span class="n">01 / PAID</span>
-        <h3>Performance creatives</h3>
-        <p>Ads for subscription apps and e-com funnels, built to pass learning and survive scaling.</p>
-        <div class="metric">Trial CPA <b>$1–2</b> · scaled on <b>$50K+</b></div>
-        <ul>
-          <li>Hooks, angles and iterations at volume</li>
-          <li>UGC, AI-UGC, motion and static</li>
-          <li>Meta, TikTok and other placements</li>
-          <li>Creative analytics and kill/scale calls</li>
-        </ul>
+    <div class="lanes">
+      <div class="lane">
+        <div class="lane-k">Paid</div>
+        <div class="lane-body">
+          <h3>Performance creatives</h3>
+          <p>Ads for subscription apps and purchase funnels, built to pass learning and hold up when budgets grow.</p>
+          <ul><li>Hooks & angles at volume</li><li>UGC & AI-UGC</li><li>Motion & static</li><li>Creative analytics</li></ul>
+        </div>
+        <div class="lane-m"><b>$1–2</b><span>trial CPA, US</span></div>
       </div>
-      <div class="pillar org rv">
-        <span class="n">02 / ORGANIC</span>
-        <h3>AI channel growth</h3>
-        <p>Content systems that grow audiences without ad spend, built on AI production pipelines.</p>
-        <div class="metric"><b>0 → 25K+</b> subs · <b>12M+</b> views/mo</div>
-        <ul>
-          <li>Channel networks from scratch</li>
-          <li>Formats, series and content calendars</li>
-          <li>Shorts, Reels and TikTok</li>
-          <li>Repurposing organic winners into ads</li>
-        </ul>
+      <div class="lane org">
+        <div class="lane-k">Organic</div>
+        <div class="lane-body">
+          <h3>AI channel growth</h3>
+          <p>Content systems that grow audiences with zero ad spend, built on AI production pipelines.</p>
+          <ul><li>Channel networks</li><li>Formats & series</li><li>Shorts, Reels, TikTok</li><li>Organic → paid reuse</li></ul>
+        </div>
+        <div class="lane-m"><b>12M+</b><span>views per month</span></div>
       </div>
-      <div class="pillar rv">
-        <span class="n">03 / CONTENT</span>
-        <h3>AI content of any complexity</h3>
-        <p>From fast ad variations to cinematic AI video, characters and mini-drama episodes.</p>
-        <div class="metric"><b>10,000+</b> creatives shipped</div>
-        <ul>
-          <li>AI video, avatars and voice</li>
-          <li>Mini-dramas and story ads</li>
-          <li>Product visuals and app previews</li>
-          <li>Building and leading creative teams</li>
-        </ul>
+      <div class="lane ai">
+        <div class="lane-k">Content</div>
+        <div class="lane-body">
+          <h3>AI content of any complexity</h3>
+          <p>From fast ad variations to cinematic AI video, characters and mini-drama episodes. Plus building the team that makes them.</p>
+          <ul><li>AI video & avatars</li><li>Voice & sound</li><li>Mini-dramas</li><li>Team lead</li></ul>
+        </div>
+        <div class="lane-m"><b>10K+</b><span>creatives shipped</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CASES -->
-<section id="cases">
+<!-- 2 · CASES -->
+<section id="cases" class="band">
   <div class="wrap">
-    <div class="sec-head rv">
-      <h2>Selected results</h2>
+    <div class="sh">
+      <span class="tag">Cases</span>
+      <h2>Results, with the story behind them</h2>
       <p>Most client work is under NDA, so product names are hidden. The numbers are real.</p>
     </div>
-    <div class="cases">
-      <article class="case rv">
-        <div class="case-top"><span class="case-type">Paid · Subscription app</span><span class="case-geo">US / Tier-1</span></div>
-        <h3>Trial creatives for a subscription app</h3>
-        <dl class="case-rows">
-          <dt>Task</dt><dd>Lower trial cost and find creatives that hold up when budgets go up.</dd>
-          <dt>Did</dt><dd>Fast iteration on hooks and angles, AI-UGC and native formats.</dd>
-        </dl>
-        <div class="case-nums">
-          <div><b>$1–2</b><span>CPA / trial</span></div>
-          <div><b>$50K+</b><span>spend scaled</span></div>
-          <div><b>US+</b><span>geos</span></div>
-        </div>
-      </article>
 
-      <article class="case rv">
-        <div class="case-top"><span class="case-type">Paid · Purchase funnel</span><span class="case-geo">US / Tier-1</span></div>
-        <h3>Creatives optimized for purchases</h3>
-        <dl class="case-rows">
-          <dt>Task</dt><dd>Bring in paying users, not just installs or trials.</dd>
-          <dt>Did</dt><dd>Value-driven angles, offer framing, testing on the purchase event.</dd>
-        </dl>
-        <div class="case-nums">
-          <div><b>$10–25</b><span>CPA / purchase</span></div>
-          <div><b>$50K+</b><span>spend scaled</span></div>
-          <div><b>US+</b><span>geos</span></div>
+    <article class="feature">
+      <div class="feature-l">
+        <div class="meta"><span>Paid · Subscription app</span><span>US / Tier-1</span></div>
+        <h3>So many trials the client had to move the app to a new developer account</h3>
+        <ol class="story">
+          <li><span class="dot">1</span><div><b>Task</b><span>Lower trial cost in the US and find creatives that survive scaling.</span></div></li>
+          <li><span class="dot">2</span><div><b>Creatives</b><span>Fast iteration on hooks and angles, AI-UGC and native formats.</span></div></li>
+          <li class="hot"><span class="dot">3</span><div><b>Trial flood</b><span>Trial CPA dropped to $1–2, winners kept performing past $50K spend.</span></div></li>
+          <li class="hot"><span class="dot">4</span><div><b>$1M+ revenue</b><span>App revenue passed $1M on the back of the trial inflow.</span></div></li>
+          <li><span class="dot">5</span><div><b>Account move</b><span>To lower the App Store commission, the client moved the app to a new developer account.</span></div></li>
+        </ol>
+      </div>
+      <div class="feature-r">
+        <div class="big">
+          <small>Revenue driven</small>
+          <strong>$1M+</strong>
+          <p>Enough to push the client out of the reduced App Store commission tier.</p>
         </div>
-      </article>
+        <div class="fnums">
+          <div><b>$1–2</b><span>CPA per trial</span></div>
+          <div><b>$50K+</b><span>spend held by winners</span></div>
+        </div>
+      </div>
+    </article>
 
-      <article class="case org rv">
-        <div class="case-top"><span class="case-type">Organic · AI channels</span><span class="case-geo">Global</span></div>
-        <h3>Channel network from zero with AI</h3>
-        <dl class="case-rows">
-          <dt>Task</dt><dd>Build an organic audience without ad spend.</dd>
-          <dt>Did</dt><dd>Designed formats and an AI production pipeline, launched a network of channels.</dd>
-        </dl>
-        <div class="case-nums">
-          <div><b>0→25K+</b><span>subscribers</span></div>
-          <div><b>12M+</b><span>views / month</span></div>
-          <div><b>$0</b><span>ad spend</span></div>
-        </div>
-      </article>
-
-      <article class="case rv">
-        <div class="case-top"><span class="case-type">Production · Team</span><span class="case-geo">Multi-niche</span></div>
-        <h3>Creative production at volume</h3>
-        <dl class="case-rows">
-          <dt>Task</dt><dd>Keep testing pipelines full across many products and niches.</dd>
-          <dt>Did</dt><dd>Personally produced creatives and led the team, from brief to analysis.</dd>
-        </dl>
-        <div class="case-nums">
-          <div><b>10K+</b><span>creatives</span></div>
-          <div><b>12+</b><span>niches</span></div>
-          <div><b>Lead</b><span>team role</span></div>
-        </div>
-      </article>
+    <div class="ledger">
+      <div class="ledger-h"><span>Type</span><span>Case</span><span>Result</span></div>
+      <div class="row">
+        <span class="type">Paid</span>
+        <div class="d"><h4>Creatives optimized for purchases</h4><p>Value-driven angles and offer framing, tested on the purchase event.</p></div>
+        <div class="n"><b>$10–25</b><span>CPA / purchase</span></div>
+        <div class="n"><b>$50K+</b><span>spend held</span></div>
+        <div class="n"><b>US+</b><span>geos</span></div>
+      </div>
+      <div class="row org">
+        <span class="type">Organic</span>
+        <div class="d"><h4>Channel network from zero with AI</h4><p>Formats and an AI production pipeline, launched across a network of channels.</p></div>
+        <div class="n"><b>0→25K+</b><span>subscribers</span></div>
+        <div class="n"><b>12M+</b><span>views / month</span></div>
+        <div class="n"><b>$0</b><span>ad spend</span></div>
+      </div>
+      <div class="row prod">
+        <span class="type">Production</span>
+        <div class="d"><h4>Creative production at volume</h4><p>Personally produced creatives and led the team, from brief to analysis.</p></div>
+        <div class="n"><b>10K+</b><span>creatives</span></div>
+        <div class="n"><b>12+</b><span>niches</span></div>
+        <div class="n"><b>Lead</b><span>team role</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- NICHES -->
+<!-- 3 · NICHES -->
 <section id="niches">
   <div class="wrap">
-    <div class="sec-head rv">
-      <h2>Niches I've worked in</h2>
-      <p>Apps and products across very different audiences, each with its own triggers and creative logic.</p>
+    <div class="sh">
+      <span class="tag">Niches</span>
+      <h2>Different audiences, different triggers</h2>
+      <p>Each niche has its own creative logic. I've found what converts in all of these.</p>
     </div>
-    <div class="niches rv" id="nicheList"></div>
+    <div class="wall" id="nicheList"></div>
   </div>
 </section>
 
-<!-- WORK -->
-<section id="work">
+<!-- 4 · WORK -->
+<section id="work" class="band">
   <div class="wrap">
-    <div class="sec-head rv">
+    <div class="sh">
+      <span class="tag">Work</span>
       <h2>Work samples</h2>
       <p>A selection of creatives not covered by NDA. Tap a video to play.</p>
     </div>
-    <div class="filters rv" id="filters"></div>
+    <div class="filters" id="filters"></div>
     <div class="videos" id="videos"></div>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- 5 · PROCESS -->
 <section id="process">
   <div class="wrap">
-    <div class="sec-head rv">
-      <h2>How I work</h2>
-      <p>A media buyer's loop applied to creative production. Every creative is a hypothesis.</p>
+    <div class="sh">
+      <span class="tag">Process</span>
+      <h2>A media buyer's loop, applied to creative</h2>
+      <p>Every creative is a hypothesis. Test data feeds the next round of research.</p>
     </div>
-    <div class="steps rv">
-      <div class="step"><span class="n">01</span><h4>Research</h4><p>Product, audience, competitors' ads, what already works in the niche.</p></div>
-      <div class="step"><span class="n">02</span><h4>Hypotheses</h4><p>Angles, hooks, pains and formats, prioritised by expected impact.</p></div>
-      <div class="step"><span class="n">03</span><h4>Production</h4><p>AI pipelines plus classic editing, many variations fast.</p></div>
-      <div class="step"><span class="n">04</span><h4>Testing</h4><p>Read CTR, CPI, CPA and retention signals, cut losers early.</p></div>
-      <div class="step"><span class="n">05</span><h4>Scaling</h4><p>Iterate on winners, refresh before fatigue, move into new geos.</p></div>
+    <div class="loop">
+      <div class="node"><span class="ring">01</span><h4>Research</h4><p>Product, audience, competitors' ads, what already works in the niche.</p></div>
+      <div class="node"><span class="ring">02</span><h4>Hypotheses</h4><p>Angles, hooks, pains and formats, ranked by expected impact.</p></div>
+      <div class="node"><span class="ring">03</span><h4>Production</h4><p>AI pipelines plus classic editing, many variations fast.</p></div>
+      <div class="node"><span class="ring">04</span><h4>Testing</h4><p>Read CTR, CPI, CPA and retention signals, cut losers early.</p></div>
+      <div class="node"><span class="ring">05</span><h4>Scaling</h4><p>Iterate on winners, refresh before fatigue, move into new geos.</p></div>
+      <div class="return"><span>↺ learnings go back into research</span></div>
     </div>
+    <p class="loop-note">↺ learnings go back into research</p>
 
-    <div class="stack rv">
-      <div class="stack-col"><h5>AI video</h5><ul><li>Kling</li><li>Runway</li><li>Veo</li><li>Seedance</li></ul></div>
-      <div class="stack-col"><h5>AI image & voice</h5><ul><li>Midjourney</li><li>Flux</li><li>ElevenLabs</li></ul></div>
-      <div class="stack-col"><h5>Editing & design</h5><ul><li>After Effects</li><li>Premiere</li><li>CapCut</li><li>Figma</li></ul></div>
-      <div class="stack-col"><h5>Ads & analytics</h5><ul><li>Meta Ads</li><li>TikTok Ads</li><li>Google Ads</li></ul></div>
+    <div class="spec">
+      <h3>Toolkit<small>what the pipeline runs on</small></h3>
+      <dl>
+        <dt>AI video</dt><dd>Kling, Runway, Veo, Seedance</dd>
+        <dt>AI image & voice</dt><dd>Midjourney, Flux, ElevenLabs</dd>
+        <dt>Editing & design</dt><dd>After Effects, Premiere, CapCut, Figma</dd>
+        <dt>Ads & analytics</dt><dd>Meta Ads, TikTok Ads, Google Ads</dd>
+      </dl>
     </div>
   </div>
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
-  <div class="wrap rv">
-    <span class="tag">Open for projects and full-time roles</span>
-    <h2 style="margin-top:20px">Need creatives that pay back?</h2>
-    <p>Tell me about your product, current CPA and goals. I'll reply with ideas on where creatives can move the numbers.</p>
-    <div class="hero-cta">
-      <a class="btn btn-accent" href="https://t.me/your_handle" target="_blank" rel="noopener">Message on Telegram</a>
-      <a class="btn btn-ghost" href="mailto:you@example.com">you@example.com</a>
+<section class="contact band" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="tag">Contact</span>
+      <h2>Need creatives that pay back?</h2>
+      <p>Tell me about your product and goals. I'll reply with ideas on where creatives can move your numbers.</p>
+      <div class="hero-cta">
+        <a class="btn btn-accent" href="https://t.me/your_handle" target="_blank" rel="noopener">Message on Telegram</a>
+        <a class="btn btn-ghost" href="mailto:you@example.com">you@example.com</a>
+      </div>
+    </div>
+    <div class="brief">
+      <h5>For a concrete answer, send</h5>
+      <ol>
+        <li>Link to the app or product</li>
+        <li>Current CPA or CAC and target</li>
+        <li>Geos and ad platforms</li>
+        <li>Monthly ad budget</li>
+      </ol>
     </div>
   </div>
 </section>
@@ -430,32 +494,29 @@ const VIDEOS = [
 const NICHES = ["News","Esoterics","Utilities","Kids","Health & Fitness","Pets","IQ & Self-improvement","Fashion & Style","Mini-dramas","Photo & Video editors","AR Drawing","AI Companions","and more"];
 
 const MARQUEE = [
-  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","scaled spend"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
+  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","client revenue"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
 ];
 /* ======================================================= */
 
 document.getElementById("yr").textContent = new Date().getFullYear();
+document.getElementById("nicheList").innerHTML = NICHES.map(n => `<span>${n}</span>`).join("");
 
-// niches
-document.getElementById("nicheList").innerHTML = NICHES.map(n => `<span class="niche">${n}</span>`).join("");
-
-// marquee
 const mq = MARQUEE.map(([a,b]) => `<span><b>${a}</b> ${b}</span><i>✦</i>`).join("");
 document.getElementById("marquee").innerHTML = mq + mq;
 
-// filters + videos
-const TINT = { "Paid": "var(--accent)", "Organic": "var(--accent-2)", "AI content": "#b892ff" };
+const TINT = { "Paid": "var(--accent)", "Organic": "var(--accent-2)", "AI content": "var(--accent-3)" };
 const fWrap = document.getElementById("filters");
 const vWrap = document.getElementById("videos");
 fWrap.innerHTML = FILTERS.map((f,i) => `<button class="filter${i===0?" on":""}" data-f="${f}">${f}</button>`).join("");
 
-vWrap.innerHTML = VIDEOS.map((v,i) => {
+vWrap.innerHTML = VIDEOS.map(v => {
   const cls = v.format === "h" ? " h" : v.format === "sq" ? " sq" : "";
   const inner = v.id
     ? `<img loading="lazy" src="https://drive.google.com/thumbnail?id=${v.id}&sz=w800" alt="${v.title}" onerror="this.style.display='none'"><div class="play"><span></span></div>`
     : `<div class="vid-ph" style="--tint:${TINT[v.tag]||'var(--accent)'}"><span class="t">${v.tag}</span><span class="c"></span><div class="bars"><i></i><i></i><span class="s">Preview soon</span></div></div>`;
+  const a11y = v.id ? `role="button" tabindex="0" aria-label="Play ${v.title}"` : "";
   return `<div class="vid" data-tag="${v.tag}">
-    <div class="vid-frame${cls}" data-id="${v.id}" ${v.id ? `role="button" tabindex="0" aria-label="Play ${v.title}"` : ""}>${inner}</div>
+    <div class="vid-frame${cls}" data-id="${v.id}" ${a11y}>${inner}</div>
     <div class="vid-meta"><b>${v.title}</b><span>${v.note}</span></div>
   </div>`;
 }).join("");
@@ -474,7 +535,6 @@ fWrap.addEventListener("click", e => {
   const f = b.dataset.f;
   vWrap.querySelectorAll(".vid").forEach(v => v.classList.toggle("hide", f!=="All" && v.dataset.tag!==f));
 });
-
 </script>
 </body>
 </html>
