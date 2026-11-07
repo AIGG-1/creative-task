@@ -226,6 +226,31 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 .spec dd{font-size:16px}
 @media(max-width:800px){.spec{grid-template-columns:1fr}.spec dl{grid-template-columns:1fr}.spec dt{border-bottom:0;padding-bottom:0}.spec dd{padding-top:6px}}
 
+
+/* EDGE · AI system + full funnel */
+.nw{white-space:nowrap}
+.edge{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+.panel{border:1px solid var(--line);border-radius:24px;padding:40px;background:var(--bg);display:flex;flex-direction:column;gap:20px;min-width:0}
+.panel .k{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.panel h3{font-size:clamp(24px,2.6vw,32px);letter-spacing:-.03em;line-height:1.12}
+.panel>p{color:var(--muted)}
+.engine{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px;align-items:center;margin-top:auto}
+.engine .col{display:flex;flex-direction:column;gap:8px}
+.engine .col span{font-family:var(--mono);font-size:12px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);color:var(--muted);background:var(--bg-2)}
+.engine .col.out span{color:var(--accent);border-color:rgba(198,255,61,.35)}
+.engine .core{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:var(--mono);font-size:11px;line-height:1.3;color:var(--accent-ink);background:var(--accent);box-shadow:0 0 0 8px rgba(198,255,61,.1),0 0 40px rgba(198,255,61,.25)}
+.engine .lbl{grid-column:1/-1;display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.funnel{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:auto;position:relative;padding-right:44px}
+.funnel li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-radius:10px;background:color-mix(in srgb,var(--accent-2) 10%,var(--bg-2));border:1px solid color-mix(in srgb,var(--accent-2) 28%,transparent);font-size:15px}
+.funnel li:nth-child(1){width:100%}.funnel li:nth-child(2){width:90%}.funnel li:nth-child(3){width:80%}.funnel li:nth-child(4){width:70%}.funnel li:nth-child(5){width:60%}
+.funnel li em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted)}
+.funnel .feed{position:absolute;right:0;top:20px;bottom:20px;width:28px;border:1px dashed var(--accent-2);border-left:0;border-radius:0 14px 14px 0}
+.funnel .feed::before{content:"";position:absolute;top:-5px;left:-2px;border-right:8px solid var(--accent-2);border-top:5px solid transparent;border-bottom:5px solid transparent}
+.feed-l{font-family:var(--mono);font-size:12px;color:var(--accent-2)}
+.panel.org .k{color:var(--accent-2)}
+@media(max-width:900px){.edge{grid-template-columns:1fr}.panel{padding:28px}}
+@media(max-width:480px){.engine{grid-template-columns:1fr}.engine .core{justify-self:center}.engine .lbl{display:none}}
+
 /* CONTACT */
 .contact{padding-block:120px}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:center}
@@ -250,6 +275,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <a href="#top" class="logo"><i></i>Your Name</a>
     <div class="nav-links">
       <a href="#services">Services</a>
+      <a href="#edge">Edge</a>
       <a href="#cases">Cases</a>
       <a href="#work">Work</a>
       <a href="#process">Process</a>
@@ -261,7 +287,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header class="hero" id="top">
   <div class="wrap">
     <span class="tag">Creative Lead · Creative Producer</span>
-    <h1>Ad creatives with <em>$1–2 trial CPA</em> in the US, scaled on $50K+</h1>
+    <h1>Ad creatives with <em><span class="nw">$1–2</span> trial CPA</em> in the US, scaled on <span class="nw">$50K+</span></h1>
     <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
     <div class="hero-cta">
       <a class="btn btn-accent" href="#contact">Discuss a project</a>
@@ -323,8 +349,46 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
+<!-- EDGE -->
+<section id="edge" class="band">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag">Edge</span>
+      <h2>An AI system and the whole funnel in view</h2>
+      <p>Two things most creative leads don't have: my own AI tool for finding what converts, and live UA data from every step of the funnel.</p>
+    </div>
+    <div class="edge">
+      <div class="panel">
+        <span class="k">Own AI system</span>
+        <h3>An AI system I built that works alongside me</h3>
+        <p>It analyzes creative performance and surfaces the patterns that lift conversion and the rest of the metrics. I turn those patterns into the next round of creatives.</p>
+        <div class="engine" aria-label="Creative data goes into the AI system, which returns patterns that lift metrics">
+          <div class="lbl"><span>Input</span><span>Output</span></div>
+          <div class="col"><span>Creatives</span><span>Ad metrics</span><span>Funnel data</span></div>
+          <div class="core">AI<br>patterns</div>
+          <div class="col out"><span>Winning hooks</span><span>Angles</span><span>Formats</span></div>
+        </div>
+      </div>
+      <div class="panel org">
+        <span class="k">Full funnel</span>
+        <h3>From the first frame to the payment</h3>
+        <p>I work on the whole user journey, not just the ad. Fresh UA data from every step comes back to me, so approaches get adjusted almost in real time.</p>
+        <ol class="funnel">
+          <li>Creative <em>hook</em></li>
+          <li>Click <em>CTR</em></li>
+          <li>Install <em>CPI</em></li>
+          <li>Trial <em>CPA</em></li>
+          <li>Payment <em>CAC</em></li>
+          <span class="feed" aria-hidden="true"></span>
+        </ol>
+        <span class="feed-l">↺ live UA data back to creative</span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 2 · CASES -->
-<section id="cases" class="band">
+<section id="cases">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Cases</span>
@@ -335,12 +399,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <article class="feature">
       <div class="feature-l">
         <div class="meta"><span>Paid · Subscription app</span><span>US / Tier-1</span></div>
-        <h3>So many trials the client had to move the app to a new developer account</h3>
+        <h3>So many paying users the client had to move the app to a new developer account</h3>
         <ol class="story">
           <li><span class="dot">1</span><div><b>Task</b><span>Lower trial cost in the US and find creatives that survive scaling.</span></div></li>
           <li><span class="dot">2</span><div><b>Creatives</b><span>Fast iteration on hooks and angles, AI-UGC and native formats.</span></div></li>
           <li class="hot"><span class="dot">3</span><div><b>Trial flood</b><span>Trial CPA dropped to $1–2, winners kept performing past $50K spend.</span></div></li>
-          <li class="hot"><span class="dot">4</span><div><b>$1M+ revenue</b><span>App revenue passed $1M on the back of the trial inflow.</span></div></li>
+          <li class="hot"><span class="dot">4</span><div><b>Trials turn into subscriptions</b><span>Users from these creatives started trials and went on to pay for subscriptions. Their payments became the core of $1M+ revenue.</span></div></li>
           <li><span class="dot">5</span><div><b>Account move</b><span>To lower the App Store commission, the client moved the app to a new developer account.</span></div></li>
         </ol>
       </div>
@@ -348,7 +412,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="big">
           <small>Revenue driven</small>
           <strong>$1M+</strong>
-          <p>Enough to push the client out of the reduced App Store commission tier.</p>
+          <p>Revenue from users who came through these creatives, started a trial and paid for a subscription.</p>
         </div>
         <div class="fnums">
           <div><b>$1–2</b><span>CPA per trial</span></div>
@@ -385,7 +449,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- 3 · NICHES -->
-<section id="niches">
+<section id="niches" class="band">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Niches</span>
@@ -397,7 +461,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- 4 · WORK -->
-<section id="work" class="band">
+<section id="work">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Work</span>
@@ -410,7 +474,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- 5 · PROCESS -->
-<section id="process">
+<section id="process" class="band">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Process</span>
@@ -440,7 +504,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- CONTACT -->
-<section class="contact band" id="contact">
+<section class="contact" id="contact">
   <div class="wrap contact-grid">
     <div>
       <span class="tag">Contact</span>
@@ -494,7 +558,7 @@ const VIDEOS = [
 const NICHES = ["News","Esoterics","Utilities","Kids","Health & Fitness","Pets","IQ & Self-improvement","Fashion & Style","Mini-dramas","Photo & Video editors","AR Drawing","AI Companions","and more"];
 
 const MARQUEE = [
-  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","client revenue"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
+  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","revenue from paid subs"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
 ];
 /* ======================================================= */
 
