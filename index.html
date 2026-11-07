@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Name — Creative Lead</title>
+<meta name="description" content="Creative Lead & Producer with a media-buying background. 10,000+ ad creatives, $1–2 trial CPA in the US, scaled on $50K+ spend. Paid, organic and AI content.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0b0d;
+  --bg-2:#111317;
+  --card:#14171c;
+  --line:#23272f;
+  --text:#eef0f3;
+  --muted:#8b93a1;
+  --accent:#c6ff3d;
+  --accent-ink:#0a0b0d;
+  --accent-2:#5ee1ff;
+  --radius:18px;
+  --max:1200px;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+  --sans:"Space Grotesk",system-ui,-apple-system,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+@media(max-width:600px){.wrap{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}}
+
+/* NAV */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,11,13,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font-weight:700;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+.logo i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 12px var(--accent);display:inline-block}
+.nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.nav-links a:hover{color:var(--text)}
+@media(max-width:860px){.nav-links{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:600;font-size:15px;transition:transform .15s,background .15s,border-color .15s}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-accent:hover{transform:translateY(-2px)}
+.btn-ghost{border:1px solid var(--line);color:var(--text)}
+.btn-ghost:hover{border-color:var(--muted)}
+nav .btn{padding:9px 16px;font-size:14px}
+
+/* HERO */
+.hero{padding:96px 0 64px;position:relative}
+.hero::before{content:"";position:absolute;inset:-200px 0 auto 50%;width:900px;height:700px;transform:translateX(-30%);background:radial-gradient(closest-side,rgba(198,255,61,.12),transparent 70%);pointer-events:none}
+.tag{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.04em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
+.tag::before{content:"";width:24px;height:1px;background:var(--accent)}
+h1{font-size:clamp(40px,7.2vw,88px);line-height:1;letter-spacing:-.04em;font-weight:700;margin:22px 0 26px;max-width:14ch}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:clamp(17px,2vw,21px);color:var(--muted);max-width:60ch}
+.lead b{color:var(--text);font-weight:500}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+
+/* KPI BOARD */
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-top:64px}
+.kpi{background:var(--bg-2);padding:28px 26px;position:relative}
+.kpi .v{font-family:var(--mono);font-weight:600;font-size:clamp(30px,4vw,46px);letter-spacing:-.03em;line-height:1.05;color:var(--text)}
+.kpi .v .u{color:var(--accent)}
+.kpi .l{color:var(--muted);font-size:14px;margin-top:10px;max-width:28ch}
+.kpi .chip{position:absolute;top:22px;right:22px;font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+.kpi .chip.paid{color:var(--accent);border-color:rgba(198,255,61,.35)}
+.kpi .chip.org{color:var(--accent-2);border-color:rgba(94,225,255,.35)}
+@media(max-width:860px){.kpis{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.kpis{grid-template-columns:1fr}}
+
+/* SECTIONS */
+section{padding:96px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:48px}
+h2{font-size:clamp(30px,4.4vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:700;max-width:18ch}
+.sec-head p{color:var(--muted);max-width:44ch}
+
+/* PILLARS */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.pillar{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:16px}
+.pillar .n{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.pillar h3{font-size:24px;letter-spacing:-.02em}
+.pillar p{color:var(--muted);font-size:15px}
+.pillar ul{list-style:none;display:flex;flex-direction:column;gap:8px;font-size:15px;margin-top:auto;padding-top:8px}
+.pillar li{display:flex;gap:10px}
+.pillar li::before{content:"→";color:var(--accent);font-family:var(--mono)}
+.pillar.org li::before{color:var(--accent-2)}
+.pillar .metric{font-family:var(--mono);font-size:14px;padding:12px 14px;border-radius:10px;background:var(--bg);border:1px solid var(--line)}
+.pillar .metric b{color:var(--accent)}
+.pillar.org .metric b{color:var(--accent-2)}
+@media(max-width:900px){.pillars{grid-template-columns:1fr}}
+
+/* CASES */
+.cases{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.case{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;gap:22px;transition:border-color .2s}
+.case:hover{border-color:#3a404b}
+.case-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.case-type{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.case.org .case-type{color:var(--accent-2)}
+.case-geo{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.case h3{font-size:24px;letter-spacing:-.02em;line-height:1.2}
+.case-rows{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:15px}
+.case-rows dt{color:var(--muted);font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.05em;padding-top:3px}
+.case-nums{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-radius:12px;overflow:hidden;margin-top:auto}
+.case-nums div{background:var(--bg);padding:16px 14px}
+.case-nums b{display:block;font-family:var(--mono);font-size:22px;letter-spacing:-.02em}
+.case-nums span{font-size:12px;color:var(--muted)}
+@media(max-width:900px){.cases{grid-template-columns:1fr}}
+@media(max-width:420px){.case-nums b{font-size:18px}}
+
+/* NICHES */
+.niches{display:flex;flex-wrap:wrap;gap:10px}
+.niche{padding:12px 18px;border:1px solid var(--line);border-radius:999px;font-size:15px;background:var(--bg-2);transition:border-color .2s,color .2s}
+.niche:hover{border-color:var(--accent);color:var(--accent)}
+
+/* WORK / VIDEOS */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.filter{font-family:var(--mono);font-size:13px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--muted);cursor:pointer}
+.filter.on{background:var(--text);color:var(--bg);border-color:var(--text)}
+.videos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:1000px){.videos{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:720px){.videos{grid-template-columns:repeat(2,1fr)}}
+.vid{display:flex;flex-direction:column;gap:10px}
+.vid-frame{position:relative;aspect-ratio:9/16;border-radius:14px;overflow:hidden;background:var(--card);border:1px solid var(--line);cursor:pointer}
+.vid-frame.h{aspect-ratio:16/9}
+.vid-frame.sq{aspect-ratio:1/1}
+.vid-frame img{width:100%;height:100%;object-fit:cover;opacity:.85;transition:opacity .2s,transform .4s}
+.vid-frame:hover img{opacity:1;transform:scale(1.03)}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.play{position:absolute;inset:0;display:grid;place-items:center}
+.play span{width:56px;height:56px;border-radius:50%;background:var(--accent);display:grid;place-items:center;box-shadow:0 8px 30px rgba(0,0,0,.4)}
+.play span::after{content:"";border-left:16px solid var(--accent-ink);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.vid-ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:14px;cursor:default;
+  background:radial-gradient(120% 70% at 30% 0%,color-mix(in srgb,var(--tint) 22%,transparent),transparent 70%),linear-gradient(180deg,var(--card),var(--bg-2))}
+.vid-ph .t{align-self:flex-start;font-family:var(--mono);font-size:11px;padding:4px 8px;border-radius:6px;color:var(--tint);border:1px solid color-mix(in srgb,var(--tint) 40%,transparent);background:rgba(10,11,13,.5)}
+.vid-ph .c{align-self:center;width:52px;height:52px;border-radius:50%;border:1px solid color-mix(in srgb,var(--tint) 50%,transparent);display:grid;place-items:center}
+.vid-ph .c::after{content:"";border-left:14px solid var(--tint);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px;opacity:.8}
+.vid-ph .bars{display:flex;flex-direction:column;gap:6px}
+.vid-ph .bars i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.08)}
+.vid-ph .bars i:first-child{width:70%}.vid-ph .bars i:last-child{width:45%}
+.vid-ph .s{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.vid-frame:has(.vid-ph){cursor:default}
+.vid-meta{font-size:14px;display:flex;flex-direction:column;gap:2px}
+.vid-meta b{font-weight:500}
+.vid-meta span{color:var(--muted);font-family:var(--mono);font-size:12px}
+.vid.hide{display:none}
+
+/* PROCESS */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.step{padding:28px 22px;border-right:1px solid var(--line);background:var(--bg-2);display:flex;flex-direction:column;gap:12px}
+.step:last-child{border-right:0}
+.step .n{font-family:var(--mono);color:var(--accent);font-size:13px}
+.step h4{font-size:19px;letter-spacing:-.01em}
+.step p{color:var(--muted);font-size:14px}
+@media(max-width:1000px){.steps{grid-template-columns:1fr}.step{border-right:0;border-bottom:1px solid var(--line)}.step:last-child{border-bottom:0}}
+
+.stack{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:16px}
+.stack-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.stack-col h5{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:14px;font-weight:400}
+.stack-col ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.stack-col li{font-size:14px;padding:6px 12px;border-radius:8px;background:var(--bg);border:1px solid var(--line)}
+@media(max-width:1000px){.stack{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.stack{grid-template-columns:1fr}}
+
+/* CONTACT */
+.contact{text-align:center;padding:120px 0}
+.contact h2{margin:0 auto 20px;max-width:16ch}
+.contact p{color:var(--muted);max-width:52ch;margin:0 auto 36px}
+.contact .hero-cta{justify-content:center}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:13px;font-family:var(--mono)}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;background:var(--bg-2)}
+.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 40s linear infinite;font-family:var(--mono);font-size:14px;color:var(--muted);white-space:nowrap}
+.marquee-track b{color:var(--text);font-weight:600}
+.marquee-track i{color:var(--accent);font-style:normal}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* REVEAL */
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo"><i></i>Your Name</a>
+    <div class="nav-links">
+      <a href="#results">Results</a>
+      <a href="#cases">Cases</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+    </div>
+    <a class="btn btn-accent" href="https://t.me/your_handle" target="_blank" rel="noopener">Telegram</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <span class="tag">Creative Lead · Creative Producer</span>
+    <h1>Creatives that <em>scale</em>, not just look good.</h1>
+    <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
+    <div class="hero-cta">
+      <a class="btn btn-accent" href="#contact">Discuss a project</a>
+      <a class="btn btn-ghost" href="#work">See the work ↓</a>
+    </div>
+
+    <div class="kpis" id="results">
+      <div class="kpi rv"><span class="chip">volume</span><div class="v"><span data-count="10000">10,000</span><span class="u">+</span></div><div class="l">creatives produced personally</div></div>
+      <div class="kpi rv"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
+      <div class="kpi rv"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">CPA per purchase</div></div>
+      <div class="kpi rv"><span class="chip paid">paid</span><div class="v"><span class="u">$</span><span data-count="50">50</span>K<span class="u">+</span></div><div class="l">spend that winning creatives held while scaling</div></div>
+      <div class="kpi rv"><span class="chip org">organic</span><div class="v"><span data-count="25">25</span>K<span class="u">+</span></div><div class="l">subscribers on an AI-driven channel network, grown from zero</div></div>
+      <div class="kpi rv"><span class="chip org">organic</span><div class="v"><span data-count="12">12</span>M<span class="u">+</span></div><div class="l">views in a single month</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track" id="marquee"></div>
+</div>
+
+<!-- WHAT I DO -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>One lead for paid, organic and content.</h2>
+      <p>Most creative leads are good at one of these. Coming from media buying, I run all three with the same thinking: hypothesis, test, numbers, scale.</p>
+    </div>
+    <div class="pillars">
+      <div class="pillar rv">
+        <span class="n">01 / PAID</span>
+        <h3>Performance creatives</h3>
+        <p>Ads for subscription apps and e-com funnels, built to pass learning and survive scaling.</p>
+        <div class="metric">Trial CPA <b>$1–2</b> · scaled on <b>$50K+</b></div>
+        <ul>
+          <li>Hooks, angles and iterations at volume</li>
+          <li>UGC, AI-UGC, motion and static</li>
+          <li>Meta, TikTok and other placements</li>
+          <li>Creative analytics and kill/scale calls</li>
+        </ul>
+      </div>
+      <div class="pillar org rv">
+        <span class="n">02 / ORGANIC</span>
+        <h3>AI channel growth</h3>
+        <p>Content systems that grow audiences without ad spend, built on AI production pipelines.</p>
+        <div class="metric"><b>0 → 25K+</b> subs · <b>12M+</b> views/mo</div>
+        <ul>
+          <li>Channel networks from scratch</li>
+          <li>Formats, series and content calendars</li>
+          <li>Shorts, Reels and TikTok</li>
+          <li>Repurposing organic winners into ads</li>
+        </ul>
+      </div>
+      <div class="pillar rv">
+        <span class="n">03 / CONTENT</span>
+        <h3>AI content of any complexity</h3>
+        <p>From fast ad variations to cinematic AI video, characters and mini-drama episodes.</p>
+        <div class="metric"><b>10,000+</b> creatives shipped</div>
+        <ul>
+          <li>AI video, avatars and voice</li>
+          <li>Mini-dramas and story ads</li>
+          <li>Product visuals and app previews</li>
+          <li>Building and leading creative teams</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Selected results</h2>
+      <p>Most client work is under NDA, so product names are hidden. The numbers are real.</p>
+    </div>
+    <div class="cases">
+      <article class="case rv">
+        <div class="case-top"><span class="case-type">Paid · Subscription app</span><span class="case-geo">US / Tier-1</span></div>
+        <h3>Trial creatives for a subscription app</h3>
+        <dl class="case-rows">
+          <dt>Task</dt><dd>Lower trial cost and find creatives that hold up when budgets go up.</dd>
+          <dt>Did</dt><dd>Fast iteration on hooks and angles, AI-UGC and native formats.</dd>
+        </dl>
+        <div class="case-nums">
+          <div><b>$1–2</b><span>CPA / trial</span></div>
+          <div><b>$50K+</b><span>spend scaled</span></div>
+          <div><b>US+</b><span>geos</span></div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-top"><span class="case-type">Paid · Purchase funnel</span><span class="case-geo">US / Tier-1</span></div>
+        <h3>Creatives optimized for purchases</h3>
+        <dl class="case-rows">
+          <dt>Task</dt><dd>Bring in paying users, not just installs or trials.</dd>
+          <dt>Did</dt><dd>Value-driven angles, offer framing, testing on the purchase event.</dd>
+        </dl>
+        <div class="case-nums">
+          <div><b>$10–25</b><span>CPA / purchase</span></div>
+          <div><b>$50K+</b><span>spend scaled</span></div>
+          <div><b>US+</b><span>geos</span></div>
+        </div>
+      </article>
+
+      <article class="case org rv">
+        <div class="case-top"><span class="case-type">Organic · AI channels</span><span class="case-geo">Global</span></div>
+        <h3>Channel network from zero with AI</h3>
+        <dl class="case-rows">
+          <dt>Task</dt><dd>Build an organic audience without ad spend.</dd>
+          <dt>Did</dt><dd>Designed formats and an AI production pipeline, launched a network of channels.</dd>
+        </dl>
+        <div class="case-nums">
+          <div><b>0→25K+</b><span>subscribers</span></div>
+          <div><b>12M+</b><span>views / month</span></div>
+          <div><b>$0</b><span>ad spend</span></div>
+        </div>
+      </article>
+
+      <article class="case rv">
+        <div class="case-top"><span class="case-type">Production · Team</span><span class="case-geo">Multi-niche</span></div>
+        <h3>Creative production at volume</h3>
+        <dl class="case-rows">
+          <dt>Task</dt><dd>Keep testing pipelines full across many products and niches.</dd>
+          <dt>Did</dt><dd>Personally produced creatives and led the team, from brief to analysis.</dd>
+        </dl>
+        <div class="case-nums">
+          <div><b>10K+</b><span>creatives</span></div>
+          <div><b>12+</b><span>niches</span></div>
+          <div><b>Lead</b><span>team role</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- NICHES -->
+<section id="niches">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Niches I've worked in</h2>
+      <p>Apps and products across very different audiences, each with its own triggers and creative logic.</p>
+    </div>
+    <div class="niches rv" id="nicheList"></div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>Work samples</h2>
+      <p>A selection of creatives not covered by NDA. Tap a video to play.</p>
+    </div>
+    <div class="filters rv" id="filters"></div>
+    <div class="videos" id="videos"></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <h2>How I work</h2>
+      <p>A media buyer's loop applied to creative production. Every creative is a hypothesis.</p>
+    </div>
+    <div class="steps rv">
+      <div class="step"><span class="n">01</span><h4>Research</h4><p>Product, audience, competitors' ads, what already works in the niche.</p></div>
+      <div class="step"><span class="n">02</span><h4>Hypotheses</h4><p>Angles, hooks, pains and formats, prioritised by expected impact.</p></div>
+      <div class="step"><span class="n">03</span><h4>Production</h4><p>AI pipelines plus classic editing, many variations fast.</p></div>
+      <div class="step"><span class="n">04</span><h4>Testing</h4><p>Read CTR, CPI, CPA and retention signals, cut losers early.</p></div>
+      <div class="step"><span class="n">05</span><h4>Scaling</h4><p>Iterate on winners, refresh before fatigue, move into new geos.</p></div>
+    </div>
+
+    <div class="stack rv">
+      <div class="stack-col"><h5>AI video</h5><ul><li>Kling</li><li>Runway</li><li>Veo</li><li>Seedance</li></ul></div>
+      <div class="stack-col"><h5>AI image & voice</h5><ul><li>Midjourney</li><li>Flux</li><li>ElevenLabs</li></ul></div>
+      <div class="stack-col"><h5>Editing & design</h5><ul><li>After Effects</li><li>Premiere</li><li>CapCut</li><li>Figma</li></ul></div>
+      <div class="stack-col"><h5>Ads & analytics</h5><ul><li>Meta Ads</li><li>TikTok Ads</li><li>Google Ads</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap rv">
+    <span class="tag">Open for projects and full-time roles</span>
+    <h2 style="margin-top:20px">Need creatives that pay back?</h2>
+    <p>Tell me about your product, current CPA and goals. I'll reply with ideas on where creatives can move the numbers.</p>
+    <div class="hero-cta">
+      <a class="btn btn-accent" href="https://t.me/your_handle" target="_blank" rel="noopener">Message on Telegram</a>
+      <a class="btn btn-ghost" href="mailto:you@example.com">you@example.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© <span id="yr"></span> Your Name</span><span>Creative Lead · Paid · Organic · AI</span></div>
+</footer>
+
+<script>
+/* =========================================================
+   EDIT HERE
+   ---------------------------------------------------------
+   VIDEOS: for each Google Drive video
+   1. Share → "Anyone with the link" → Viewer
+   2. Copy the link: https://drive.google.com/file/d/FILE_ID/view
+   3. Paste FILE_ID into `id` below
+   format: "v" = 9:16, "h" = 16:9, "sq" = 1:1
+   tag must match one of FILTERS
+   ========================================================= */
+const FILTERS = ["All", "Paid", "Organic", "AI content"];
+
+const VIDEOS = [
+  { id: "", title: "Esoteric app — UGC hook", note: "Paid · US", tag: "Paid", format: "v" },
+  { id: "", title: "Fitness app — AI avatar", note: "Paid · Tier-1", tag: "Paid", format: "v" },
+  { id: "", title: "Kids app — motion ad", note: "Paid · US", tag: "Paid", format: "v" },
+  { id: "", title: "AI companion — story ad", note: "Paid · US", tag: "Paid", format: "v" },
+  { id: "", title: "Channel short #1", note: "Organic", tag: "Organic", format: "v" },
+  { id: "", title: "Channel short #2", note: "Organic", tag: "Organic", format: "v" },
+  { id: "", title: "Mini-drama episode", note: "AI video", tag: "AI content", format: "v" },
+  { id: "", title: "Cinematic AI spot", note: "AI video", tag: "AI content", format: "v" },
+];
+
+const NICHES = ["News","Esoterics","Utilities","Kids","Health & Fitness","Pets","IQ & Self-improvement","Fashion & Style","Mini-dramas","Photo & Video editors","AR Drawing","AI Companions","and more"];
+
+const MARQUEE = [
+  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","scaled spend"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
+];
+/* ======================================================= */
+
+document.getElementById("yr").textContent = new Date().getFullYear();
+
+// niches
+document.getElementById("nicheList").innerHTML = NICHES.map(n => `<span class="niche">${n}</span>`).join("");
+
+// marquee
+const mq = MARQUEE.map(([a,b]) => `<span><b>${a}</b> ${b}</span><i>✦</i>`).join("");
+document.getElementById("marquee").innerHTML = mq + mq;
+
+// filters + videos
+const TINT = { "Paid": "var(--accent)", "Organic": "var(--accent-2)", "AI content": "#b892ff" };
+const fWrap = document.getElementById("filters");
+const vWrap = document.getElementById("videos");
+fWrap.innerHTML = FILTERS.map((f,i) => `<button class="filter${i===0?" on":""}" data-f="${f}">${f}</button>`).join("");
+
+vWrap.innerHTML = VIDEOS.map((v,i) => {
+  const cls = v.format === "h" ? " h" : v.format === "sq" ? " sq" : "";
+  const inner = v.id
+    ? `<img loading="lazy" src="https://drive.google.com/thumbnail?id=${v.id}&sz=w800" alt="${v.title}" onerror="this.style.display='none'"><div class="play"><span></span></div>`
+    : `<div class="vid-ph" style="--tint:${TINT[v.tag]||'var(--accent)'}"><span class="t">${v.tag}</span><span class="c"></span><div class="bars"><i></i><i></i><span class="s">Preview soon</span></div></div>`;
+  return `<div class="vid" data-tag="${v.tag}">
+    <div class="vid-frame${cls}" data-id="${v.id}" ${v.id ? `role="button" tabindex="0" aria-label="Play ${v.title}"` : ""}>${inner}</div>
+    <div class="vid-meta"><b>${v.title}</b><span>${v.note}</span></div>
+  </div>`;
+}).join("");
+
+function playVideo(el){
+  const id = el.dataset.id;
+  if(!id || el.querySelector("iframe")) return;
+  el.innerHTML = `<iframe src="https://drive.google.com/file/d/${id}/preview" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+}
+vWrap.addEventListener("click", e => { const f = e.target.closest(".vid-frame"); if(f) playVideo(f); });
+vWrap.addEventListener("keydown", e => { if(e.key==="Enter"||e.key===" "){ const f=e.target.closest(".vid-frame"); if(f){e.preventDefault();playVideo(f);} } });
+
+fWrap.addEventListener("click", e => {
+  const b = e.target.closest(".filter"); if(!b) return;
+  fWrap.querySelectorAll(".filter").forEach(x => x.classList.toggle("on", x===b));
+  const f = b.dataset.f;
+  vWrap.querySelectorAll(".vid").forEach(v => v.classList.toggle("hide", f!=="All" && v.dataset.tag!==f));
+});
+
+</script>
+</body>
+</html>
