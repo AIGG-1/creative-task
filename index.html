@@ -7,6 +7,8 @@
 <meta name="description" content="Creative Lead & Producer with a media-buying background. Ad creatives with $1–2 trial CPA in the US that hold $50K+ spend. Paid, organic and AI content.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#0a0b0d">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* Layout: hero + KPI board, then each section in its own visual format (lanes, story, ledger, type wall, grid, loop), tied together by one section header and one palette */
@@ -58,8 +60,12 @@ nav .btn{padding:9px 16px;font-size:14px}
 .hero::before{content:"";position:absolute;inset:-200px 0 auto 50%;width:900px;height:700px;transform:translateX(-30%);background:radial-gradient(closest-side,rgba(198,255,61,.12),transparent 70%);pointer-events:none}
 .tag{font-family:var(--mono);font-size:13px;color:var(--accent);letter-spacing:.06em;text-transform:uppercase;display:inline-flex;align-items:center;gap:10px}
 .tag::before{content:"";width:24px;height:1px;background:currentColor}
-h1{font-size:clamp(36px,6.2vw,76px);line-height:1.02;letter-spacing:-.04em;font-weight:700;margin:22px 0 26px;max-width:17ch}
+h1{font-size:clamp(36px,6.2vw,76px);line-height:1.02;letter-spacing:-.04em;font-weight:700;margin:22px 0 22px}
 h1 em{font-style:normal;color:var(--accent)}
+h1 .ln{display:block}
+.spend{display:inline-flex;align-items:baseline;gap:4px 12px;flex-wrap:wrap;padding:10px 16px;border:1px solid rgba(198,255,61,.35);border-radius:12px;background:rgba(198,255,61,.06);margin-bottom:26px}
+.spend b{font-family:var(--mono);font-size:22px;color:var(--accent);letter-spacing:-.02em}
+.spend span{color:var(--text);font-size:15px}
 .lead{font-size:clamp(17px,2vw,20px);color:var(--muted);max-width:60ch}
 .lead b{color:var(--text);font-weight:500}
 .hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
@@ -247,6 +253,11 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 .funnel .feed{position:absolute;right:0;top:20px;bottom:20px;width:28px;border:1px dashed var(--accent-2);border-left:0;border-radius:0 14px 14px 0}
 .funnel .feed::before{content:"";position:absolute;top:-5px;left:-2px;border-right:8px solid var(--accent-2);border-top:5px solid transparent;border-bottom:5px solid transparent}
 .feed-l{font-family:var(--mono);font-size:12px;color:var(--accent-2)}
+.ftabs{display:inline-flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:999px;align-self:flex-start;margin-top:auto}
+.ftab{font-family:var(--mono);font-size:12px;padding:7px 14px;border-radius:999px;border:0;background:none;color:var(--muted);cursor:pointer}
+.ftab.on{background:var(--accent-2);color:var(--accent-ink)}
+.funnel[hidden]{display:none}
+.ftabs+.funnel,.ftabs+.funnel+.funnel{margin-top:0}
 .panel.org .k{color:var(--accent-2)}
 @media(max-width:900px){.edge{grid-template-columns:1fr}.panel{padding:28px}}
 @media(max-width:480px){.engine{grid-template-columns:1fr}.engine .core{justify-self:center}.engine .lbl{display:none}}
@@ -287,7 +298,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 <header class="hero" id="top">
   <div class="wrap">
     <span class="tag">Creative Lead · Creative Producer</span>
-    <h1>Ad creatives with <em><span class="nw">$1–2</span> trial CPA</em> in the US, scaled on <span class="nw">$50K+</span></h1>
+    <h1><span class="ln">Ad creatives with</span> <span class="ln"><em><span class="nw">$1–2</span> trial CPA</em> in the US</span> <span class="ln">Scaled on <span class="nw">$50K+</span></span></h1>
+    <p class="spend"><b>$1M+</b><span>total ad spend on my creatives over a few months</span></p>
     <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
     <div class="hero-cta">
       <a class="btn btn-accent" href="#contact">Discuss a project</a>
@@ -355,7 +367,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="sh">
       <span class="tag">Edge</span>
       <h2>An AI system and the whole funnel in view</h2>
-      <p>Two things most creative leads don't have: my own AI tool for finding what converts, and live UA data from every step of the funnel.</p>
+      <p>Two things most creative leads don't have: my own AI tool for finding what converts, and live UA data from every step of the funnel, in apps and web2web.</p>
     </div>
     <div class="edge">
       <div class="panel">
@@ -372,8 +384,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="panel org">
         <span class="k">Full funnel</span>
         <h3>From the first frame to the payment</h3>
-        <p>I work on the whole user journey, not just the ad. Fresh UA data from every step comes back to me, so approaches get adjusted almost in real time.</p>
-        <ol class="funnel">
+        <p>I work on the whole user journey, not just the ad, for mobile apps and web2web products. Fresh UA data from every step comes back to me, so approaches get adjusted almost in real time.</p>
+        <div class="ftabs" role="tablist" aria-label="Funnel type">
+          <button class="ftab on" role="tab" aria-selected="true" data-fn="app" id="ftab-app">Mobile app</button>
+          <button class="ftab" role="tab" aria-selected="false" data-fn="web" id="ftab-web">Web2Web</button>
+        </div>
+        <ol class="funnel" data-fn="web" hidden>
+          <li>Creative <em>hook</em></li>
+          <li>Landing <em>CTR</em></li>
+          <li>Quiz / onboarding <em>CR</em></li>
+          <li>Paywall <em>CR</em></li>
+          <li>Payment <em>CAC</em></li>
+          <span class="feed" aria-hidden="true"></span>
+        </ol>
+        <ol class="funnel" data-fn="app">
           <li>Creative <em>hook</em></li>
           <li>Click <em>CTR</em></li>
           <li>Install <em>CPI</em></li>
@@ -558,7 +582,7 @@ const VIDEOS = [
 const NICHES = ["News","Esoterics","Utilities","Kids","Health & Fitness","Pets","IQ & Self-improvement","Fashion & Style","Mini-dramas","Photo & Video editors","AR Drawing","AI Companions","and more"];
 
 const MARQUEE = [
-  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","revenue from paid subs"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
+  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","total spend"],["$1M+","revenue from paid subs"],["Apps","+ web2web"],["25K+","organic subs"],["12M+","views / month"],["12+","niches"]
 ];
 /* ======================================================= */
 
@@ -592,6 +616,11 @@ function playVideo(el){
 }
 vWrap.addEventListener("click", e => { const f = e.target.closest(".vid-frame"); if(f) playVideo(f); });
 vWrap.addEventListener("keydown", e => { if(e.key==="Enter"||e.key===" "){ const f=e.target.closest(".vid-frame"); if(f){e.preventDefault();playVideo(f);} } });
+
+document.querySelectorAll(".ftab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".ftab").forEach(x => { const on = x === t; x.classList.toggle("on", on); x.setAttribute("aria-selected", on); });
+  document.querySelectorAll(".funnel").forEach(f => f.hidden = f.dataset.fn !== t.dataset.fn);
+}));
 
 fWrap.addEventListener("click", e => {
   const b = e.target.closest(".filter"); if(!b) return;
