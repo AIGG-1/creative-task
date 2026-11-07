@@ -30,6 +30,7 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v13` | Sharp 4px corners everywhere, viewfinder frames on key blocks (winner B, stats, main case, full-cycle panel, free audit) |
 | `version/v14` | Removed REC label; added $10–25 avg purchase CPA by geo and niche (hero badge, stats tile, main case) |
 | `version/v15` | Emerald accent (#2FD48A), less accent area, warm white text; favicon and link cover recolored |
+| `version/v16` | Pistachio accent (#B5E07A) with full accent fills, as in the palette preview; favicon and link cover recolored |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
 
