@@ -19,6 +19,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta name="theme-color" content="#0a0b0d">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
 <style>
 /* Layout: hero + KPI board, then each section in its own visual format (lanes, story, ledger, type wall, grid, loop), tied together by one section header and one palette */
 :root{
@@ -109,7 +110,7 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 
 /* 1 · LANES (what I do) */
 .lanes{border-top:1px solid var(--line)}
-.lane{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr) minmax(0,200px);gap:32px;padding:40px 0;border-bottom:1px solid var(--line);align-items:start;--tint:var(--accent)}
+.lane{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr) minmax(0,200px);gap:32px;padding:40px 0;border-bottom:1px solid var(--line);align-items:start;--tint:var(--accent)}
 .lane.org{--tint:var(--accent-2)}
 .lane.ai{--tint:var(--accent-3)}
 .lane-k{font-size:clamp(44px,6vw,84px);font-weight:700;letter-spacing:-.05em;line-height:.9;color:transparent;-webkit-text-stroke:1.5px var(--tint);transition:color .3s}
@@ -375,9 +376,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
  linear-gradient(var(--c),var(--c)) bottom right/var(--l) var(--w) no-repeat,linear-gradient(var(--c),var(--c)) bottom right/var(--w) var(--l) no-repeat}
 @media(max-width:600px){.brk::after{inset:-7px;--l:14px}}
 
+
+/* HAND-DRAWN NOTES */
+.dd{position:absolute;pointer-events:none;z-index:5;color:var(--accent)}
+.dd svg,.ico svg,.sad svg{overflow:visible;filter:url(#rough);display:block}
+.dd path,.dd circle,.ico path,.ico circle,.ico rect,.sad path,.sad circle{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.hand{font-family:"Caveat","Segoe Print","Bradley Hand",cursive;font-weight:700;font-size:30px;line-height:1;color:var(--accent);white-space:nowrap;display:inline-block;transform:rotate(-4deg)}
+.ab{position:relative}
+.dd-arrow{left:calc(37% - 250px);top:270px;width:240px}
+.dd-arrow svg{width:240px;height:110px}
+.dd-arrow .hand{position:absolute;left:-10px;top:104px}
+.a-lab{display:inline-flex;align-items:center;gap:12px}
+.sad{width:40px;height:34px;color:#ff5a4d;display:inline-block}.sad svg{width:100%;height:100%}
+h1 em{position:relative}
+.dd-under{left:-4px;right:0;bottom:-4px}.dd-under svg{width:100%;height:14px}
+.dd-circle{left:6px;top:8px}.dd-circle svg{width:200px;height:90px}
+.big{position:relative}
+.dd-star{right:40px;top:36px;color:var(--accent-ink)}.dd-star svg{width:64px;height:64px}
+.dd-real{right:40px;top:118px;color:var(--accent-ink);transform:rotate(-6deg)}
+.dd-me{right:150px;bottom:-54px}.dd-me svg{width:70px;height:46px}.dd-me .hand{position:absolute;left:70px;top:22px;font-size:28px}
+.offer{position:relative}
+.dd-start{left:-190px;top:40px;width:180px;height:140px}.dd-start svg{position:absolute;left:40px;top:58px;width:130px;height:80px}
+.lane-k{display:flex;align-items:center;gap:16px}
+.ico{width:46px;height:46px;flex:none;color:var(--tint)}.ico svg{width:100%;height:100%}
+@media(max-width:1100px){.dd-start{display:none}}
+@media(max-width:900px){.dd-arrow,.dd-me{display:none}.lane-k .ico{width:38px;height:38px}}
+@media(max-width:600px){.dd-under,.dd-real{display:none}}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter></defs></svg>
 
 <nav>
   <div class="wrap">
@@ -400,14 +428,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="abtest" aria-hidden="true"><span>A/B test · headline</span><span>Audience: you</span><span class="w">● Winner found</span></div>
     </div>
     <div class="ab">
+      <div class="dd dd-arrow" aria-hidden="true"><svg viewBox="0 0 240 110" aria-hidden="true"><path d="M14 90 C 60 104, 150 96, 222 52"/><path d="M200 44 L224 50 L214 74"/></svg><span class="hand">this one paid back</span></div>
       <div class="ab-card ab-a" aria-hidden="true">
-        <div class="lab"><b>A</b><span class="k">✕ Killed</span></div>
+        <div class="lab"><b class="a-lab">A <span class="sad"><svg viewBox="0 0 70 60" aria-hidden="true"><circle cx="35" cy="30" r="24"/><circle cx="27" cy="25" r="1.5"/><circle cx="43" cy="25" r="1.5"/><path d="M24 42 C 30 36, 40 36, 46 42"/></svg></span></b><span class="k">✕ Killed</span></div>
         <p class="ab-h">I make beautiful, creative content</p>
         <p class="ab-s">Pretty, on-brand, and nobody knows if it pays back.</p>
       </div>
       <div class="ab-card ab-b brk">
         <div class="lab"><b>B</b><span class="win">● WINNER · SCALING</span></div>
-        <h1><span class="ln">Ad creatives with</span> <span class="ln"><em><span class="nw">$1–2</span> trial CPA</em> in the US</span> <span class="ln">Scaled on <span class="nw">$50K+</span></span></h1>
+        <h1><span class="ln">Ad creatives with</span> <span class="ln"><em><span class="nw">$1–2</span> trial CPA<span class="dd dd-under" aria-hidden="true"><svg viewBox="0 0 380 26" aria-hidden="true"><path d="M4 16 C 60 6, 120 22, 190 12 S 320 6, 376 16"/></svg></span></em> in the US</span> <span class="ln">Scaled on <span class="nw">$50K+</span></span></h1>
         <div class="spends">
           <p class="spend"><b>$1M+</b><span>total ad spend on my creatives over a few months</span></p>
           <p class="spend"><b>$10–25</b><span>average CPA per purchase, by geo and niche</span></p>
@@ -422,7 +451,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
     <div class="kpis brk" id="results">
       <div class="kpi"><span class="chip">volume</span><div class="v">10,000<span class="u">+</span></div><div class="l">creatives produced personally</div></div>
-      <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
+      <div class="kpi"><span class="dd dd-circle" aria-hidden="true"><svg viewBox="0 0 200 90" aria-hidden="true"><path d="M30 18 C 80 2, 170 6, 186 34 C 200 62, 120 84, 60 78 C 10 72, 2 44, 24 24 C 40 12, 70 8, 96 10"/></svg></span><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
       <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">average CPA per purchase, depending on geo and niche</div></div>
       <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>50K<span class="u">+</span></div><div class="l">spend my creatives hold and keep scaling past, without burning out early</div></div>
       <div class="kpi"><span class="chip org">organic</span><div class="v">25K<span class="u">+</span></div><div class="l">subscribers on an AI-driven channel network, grown from zero</div></div>
@@ -445,7 +474,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
     <div class="lanes">
       <div class="lane">
-        <div class="lane-k">Paid</div>
+        <div class="lane-k"><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="30" cy="34" r="22"/><circle cx="30" cy="34" r="13"/><circle cx="30" cy="34" r="4"/><path d="M30 34 L56 8"/><path d="M48 8 L56 8 L56 16"/></svg></span>Paid</div>
         <div class="lane-body">
           <h3>Performance creatives</h3>
           <p>Ads for subscription apps and purchase funnels, built to pass learning and hold up when budgets grow.</p>
@@ -454,7 +483,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="lane-m"><b>$1–2</b><span>trial CPA, US</span></div>
       </div>
       <div class="lane org">
-        <div class="lane-k">Organic</div>
+        <div class="lane-k"><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 58 C32 44 32 36 32 26"/><path d="M32 36 C22 36 14 30 12 18 C24 18 31 24 32 36"/><path d="M32 30 C40 28 48 22 50 10 C38 10 33 18 32 30"/></svg></span>Organic</div>
         <div class="lane-body">
           <h3>AI channel growth</h3>
           <p>Content systems that grow audiences with zero ad spend, built on AI production pipelines.</p>
@@ -463,7 +492,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="lane-m"><b>12M+</b><span>views per month</span></div>
       </div>
       <div class="lane ai">
-        <div class="lane-k">Content</div>
+        <div class="lane-k"><span class="ico" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><rect x="8" y="24" width="48" height="32" rx="2"/><path d="M8 24 L12 10 L58 14 L56 26"/><path d="M20 11 L16 24"/><path d="M32 12 L28 24"/><path d="M44 13 L40 25"/><path d="M28 34 L40 40 L28 46 Z"/></svg></span>Content</div>
         <div class="lane-body">
           <h3>AI content of any complexity</h3>
           <p>From fast ad variations to cinematic AI video, characters and mini-drama episodes. Plus building the team that makes them.</p>
@@ -496,7 +525,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="chips"><span>Producer writes brief</span><i>+</i><span>Scriptwriter</span><i>+</i><span>AI creator</span><i>+</i><span>Editor</span></div>
             <span class="who">a team</span>
           </div>
-          <div class="cmp-row me">
+          <div class="cmp-row me"><span class="dd dd-me" aria-hidden="true"><svg viewBox="0 0 70 46" aria-hidden="true"><path d="M60 40 C 40 40, 20 30, 14 6"/><path d="M4 16 L14 4 L24 16"/></svg><span class="hand">that's me</span></span>
             <span class="lbl">With me</span>
             <div class="chips"><span>Concept</span><span>Script</span><span>Generation</span><span>Editing</span></div>
             <span class="who">1 specialist</span>
@@ -566,7 +595,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         </ol>
       </div>
       <div class="feature-r">
-        <div class="big">
+        <div class="big"><span class="dd dd-star" aria-hidden="true"><svg viewBox="0 0 70 70" aria-hidden="true"><path d="M35 4 L42 26 L66 27 L47 41 L54 64 L35 50 L16 64 L23 41 L4 27 L28 26 Z"/></svg></span><span class="dd dd-real hand" aria-hidden="true">real users, real payments</span>
           <small>Revenue driven</small>
           <strong>$1M+</strong>
           <p>Revenue from users who came through these creatives, started a trial and paid for a subscription.</p>
@@ -716,7 +745,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
     </div>
     <div class="contact-side">
-    <div class="offer brk">
+    <div class="offer brk"><span class="dd dd-start" aria-hidden="true"><span class="hand">start here,<br>it's free</span><svg viewBox="0 0 130 80" aria-hidden="true"><path d="M4 10 C 30 60, 80 70, 120 56"/><path d="M104 44 L122 56 L104 68"/></svg></span>
       <small>Free</small>
       <h4>Audit of 3 of your creatives</h4>
       <p>Send links to 3 of your ads. You get a breakdown of hooks, angles and structure, plus what to test next.</p>
