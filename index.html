@@ -390,7 +390,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .sad{width:40px;height:34px;color:#ff5a4d;display:inline-block}.sad svg{width:100%;height:100%}
 h1 em{position:relative}
 .dd-under{left:-4px;right:0;bottom:-4px}.dd-under svg{width:100%;height:14px}
-.dd-circle{left:6px;top:8px}.dd-circle svg{width:200px;height:90px}
+.dd-circle{left:2px;top:6px}.dd-circle svg{width:150px;height:74px}
 .big{position:relative}
 .dd-star{right:40px;top:36px;color:var(--accent-ink)}.dd-star svg{width:64px;height:64px}
 .dd-real{right:40px;top:118px;color:var(--accent-ink);transform:rotate(-6deg)}
@@ -475,6 +475,18 @@ h1 em{position:relative}
 @media(max-width:900px){.adsproof{grid-template-columns:1fr}.ap-l{border-right:0;border-bottom:1px solid var(--line);padding:22px 18px}.ap-r{padding:22px 18px}
  .ah,.ar{grid-template-columns:30px minmax(0,1fr) 70px 54px 52px;gap:8px}.ar{font-size:12px}
  .ptest{grid-template-columns:1fr}.ptest .th button{width:100%}}
+
+/* AUTHOR CARD in hero */
+.ab-left{display:flex;flex-direction:column;gap:150px;min-width:0}
+.me-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:14px}
+.me-top{display:flex;gap:16px;align-items:center}
+.me-ph{width:64px;height:64px;flex:none;border-radius:50%;border:1.5px dashed var(--muted);display:grid;place-items:center;font-family:var(--mono);font-size:10px;color:var(--muted)}
+.me-k{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:6px}
+.me-h{font-size:24px;line-height:1.1;letter-spacing:-.02em}
+.me-card p{color:var(--muted);font-size:15px}.me-card p b{color:var(--text);font-weight:500}
+.me-f{display:flex;flex-wrap:wrap;gap:6px}.me-f span{font-family:var(--mono);font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:4px;color:var(--text)}
+.me-l{font-weight:600;color:var(--accent);font-size:15px}.me-l:hover{text-decoration:underline}
+@media(max-width:900px){.ab-left{display:contents}.me-card{order:3}.ab-a{order:1}.ab-b{order:2}}
 </style>
 </head>
 <body>
@@ -502,10 +514,18 @@ h1 em{position:relative}
     </div>
     <div class="ab">
       <div class="dd dd-arrow" aria-hidden="true"><svg viewBox="0 0 240 110" aria-hidden="true"><path d="M14 90 C 60 104, 150 96, 222 52"/><path d="M200 44 L224 50 L214 74"/></svg><span class="hand">this one paid back</span></div>
+      <div class="ab-left">
       <div class="ab-card ab-a" aria-hidden="true">
-        <div class="lab"><b class="a-lab">A <span class="sad"><svg viewBox="0 0 70 60" aria-hidden="true"><circle cx="35" cy="30" r="24"/><circle cx="27" cy="25" r="1.5"/><circle cx="43" cy="25" r="1.5"/><path d="M24 42 C 30 36, 40 36, 46 42"/></svg></span></b><span class="k">✕ Killed</span></div>
-        <p class="ab-h">I make beautiful, creative content</p>
-        <p class="ab-s">Pretty, on-brand, and nobody knows if it pays back.</p>
+          <div class="lab"><b class="a-lab">A <span class="sad"><svg viewBox="0 0 70 60" aria-hidden="true"><circle cx="35" cy="30" r="24"/><circle cx="27" cy="25" r="1.5"/><circle cx="43" cy="25" r="1.5"/><path d="M24 42 C 30 36, 40 36, 46 42"/></svg></span></b><span class="k">✕ Killed</span></div>
+          <p class="ab-h">I make beautiful, creative content</p>
+          <p class="ab-s">Pretty, on-brand, and nobody knows if it pays back.</p>
+        </div>
+      <div class="me-card">
+        <div class="me-top"><span class="me-ph" aria-hidden="true">photo</span><div><span class="me-k">Who's running this test</span><h2 class="me-h">Hey, I'm a Creative Lead</h2></div></div>
+        <p>Media buyer turned Creative Lead. I led a buying team with in-house production and ran my own ad agency. Now I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and judge them by CPA, not likes.</p>
+        <div class="me-f"><span>10K+ creatives</span><span>14+ niches</span><span>own AI system</span></div>
+        <a class="me-l" href="https://t.me/your_handle" target="_blank" rel="noopener">Message me on Telegram →</a>
+      </div>
       </div>
       <div class="ab-card ab-b brk">
         <div class="lab"><b>B</b><span class="win">● WINNER · SCALING</span></div>
@@ -515,7 +535,6 @@ h1 em{position:relative}
           <p class="spend"><b>&lt;$1</b><span>trial CPA on the best creatives</span></p>
           <p class="spend"><b>$10–25</b><span>average CPA per purchase, by geo and niche</span></p>
         </div>
-        <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience: led a buying team with in-house production and ran my own ad agency. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
         <div class="hero-cta">
           <a class="btn btn-accent" href="#contact">Discuss a project</a>
           <a class="btn btn-ghost" href="#cases">See the cases ↓</a>
