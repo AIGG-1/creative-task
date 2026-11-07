@@ -33,6 +33,7 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v16` | Pistachio accent (#B5E07A) with full accent fills, as in the palette preview; favicon and link cover recolored |
 | `version/v17` | Hand-drawn notes: arrow into the winner card, sad face on A, underline, circled stat, star on $1M+, "that's me", "start here"; sketch icons beside Paid / Organic / Content |
 | `version/v18` | Niche cast: 8 hand-drawn characters (News, Esoterics, Utilities, Kids, Fitness, Pets, Language learning, AI Companions) under the niche list |
+| `version/v19` | Background collage of 41 real creatives (bg/): tilted wall in the hero, dim rows behind Cases and Work |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
 

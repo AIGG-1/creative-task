@@ -411,6 +411,22 @@ h1 em{position:relative}
 .cast .bt{font-family:Caveat,cursive;font-weight:700;font-size:20px;fill:currentColor;stroke:none}
 .cast figcaption{font-family:Caveat,"Segoe Print",cursive;font-weight:700;font-size:22px;line-height:1.05;text-align:center;transform:rotate(-3deg)}
 @media(max-width:900px){.cast{grid-template-columns:repeat(4,minmax(0,1fr));row-gap:28px}.cast svg{height:90px}.cast figcaption{font-size:19px}}
+
+/* CREATIVE COLLAGE BACKGROUND */
+.bgc{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.hero>.wrap,.has-col>.wrap{position:relative;z-index:1}
+.has-col{position:relative;overflow:hidden}
+.bgc img{display:block;flex:none;width:150px;aspect-ratio:9/16;object-fit:cover;border-radius:6px;background:var(--card)}
+.bgc-wall .w{position:absolute;right:-140px;top:-80px;width:1040px;display:flex;flex-wrap:wrap;gap:12px;transform:rotate(-8deg);opacity:.30;filter:saturate(.55) brightness(.85)}
+.bgc-wall{-webkit-mask-image:linear-gradient(90deg,transparent 22%,#000 78%);mask-image:linear-gradient(90deg,transparent 22%,#000 78%)}
+.bgc-wall::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,13,.15),rgba(10,11,13,.9) 95%)}
+.bgc-rows .r{position:absolute;left:-60px;right:-60px;display:flex;gap:12px;opacity:.09;filter:grayscale(1) blur(1px)}
+.bgc-rows::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--sec-bg) 0%,transparent 22%,transparent 78%,var(--sec-bg) 100%)}
+@media(max-width:720px){
+  .bgc img{width:110px}
+  .bgc-wall .w{width:700px;right:-300px;opacity:.16}
+  .bgc-wall{-webkit-mask-image:linear-gradient(90deg,transparent 35%,#000 90%);mask-image:linear-gradient(90deg,transparent 35%,#000 90%)}
+}
 </style>
 </head>
 <body>
@@ -874,6 +890,19 @@ fWrap.addEventListener("click", e => {
   const f = b.dataset.f;
   vWrap.querySelectorAll(".vid").forEach(v => v.classList.toggle("hide", f!=="All" && v.dataset.tag!==f));
 });
+
+// creative collage background
+(() => {
+  const N = 41, order = [3,17,8,25,12,30,1,21,34,6,14,28,10,19,33,4,23,15,36,9,27,2,31,13,20,7,35,16,24,11,29,5,22,18,32,26,37,40,38,41,39];
+  const tile = i => `<img src="bg/c${String(order[i % N]).padStart(2,"0")}.webp" alt="" loading="lazy" decoding="async">`;
+  const hero = document.querySelector(".hero");
+  if (hero) { const c = document.createElement("div"); c.className = "bgc bgc-wall"; c.setAttribute("aria-hidden","true");
+    c.innerHTML = '<div class="w">' + Array.from({length:30}, (_, i) => tile(i)).join("") + "</div>"; hero.prepend(c); }
+  ["cases","work"].forEach((id, s) => { const sec = document.getElementById(id); if (!sec) return; sec.classList.add("has-col");
+    const c = document.createElement("div"); c.className = "bgc bgc-rows"; c.setAttribute("aria-hidden","true");
+    c.innerHTML = [40,330,620,910].map((t,k) => `<div class="r" style="top:${t}px;left:${-60-k*70}px">` + Array.from({length:14}, (_, i) => tile(i + k*9 + s*5)).join("") + "</div>").join("");
+    sec.prepend(c); });
+})();
 </script>
 </body>
 </html>
