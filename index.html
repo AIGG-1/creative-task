@@ -145,7 +145,7 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 .big small{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;opacity:.7}
 .big strong{font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em;font-weight:700}
 .big p{font-size:17px;max-width:38ch;font-weight:500}
-.fnums{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
+.fnums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line)}
 .fnums div{background:var(--bg-2);padding:28px 26px}
 .fnums b{display:block;font-family:var(--mono);font-size:28px;letter-spacing:-.03em}
 .fnums span{font-size:13px;color:var(--muted)}
@@ -325,9 +325,7 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 .ab-b .lead{font-size:clamp(16px,1.5vw,18px)}
 .ab-b .hero-cta{margin-top:8px}
 .win{font-family:var(--mono);font-size:12px;font-weight:600;background:var(--accent);color:var(--accent-ink);padding:5px 10px;border-radius:6px}
-.vf-meta{display:flex;justify-content:space-between;gap:12px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--muted);margin-top:56px}
-.vf-meta i{font-style:normal;color:#ff5a4d}
-.vf-meta+.kpis{margin-top:14px}
+
 @media(max-width:900px){.ab{grid-template-columns:1fr}.ab-card{padding:24px}.ab-a{gap:10px}.ab-h{font-size:24px}}
 /* film grain */
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
@@ -362,6 +360,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}html{scroll-behavior:auto}}
 
+.spends{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:6px}
+.spends .spend{margin:0}
 /* SHARP CORNERS + VIEWFINDER FRAMES */
 :root{--radius:4px}
 .btn,.filter,.lane-body li,.cmp-row,.cmp-row .chips span,.ftabs,.ftab,.abtest span,.win,.meta span,.feature,.panel,.vid-frame,.funnel li,.spend,.brief,.offer,.offer a,.ab-card,.kpis,.bgx,.kpi .chip,.engine .col span,.vid-ph .t,.case-nums,.funnel .feed{border-radius:4px}
@@ -407,7 +407,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="ab-card ab-b brk">
         <div class="lab"><b>B</b><span class="win">● WINNER · SCALING</span></div>
         <h1><span class="ln">Ad creatives with</span> <span class="ln"><em><span class="nw">$1–2</span> trial CPA</em> in the US</span> <span class="ln">Scaled on <span class="nw">$50K+</span></span></h1>
-        <p class="spend"><b>$1M+</b><span>total ad spend on my creatives over a few months</span></p>
+        <div class="spends">
+          <p class="spend"><b>$1M+</b><span>total ad spend on my creatives over a few months</span></p>
+          <p class="spend"><b>$10–25</b><span>average CPA per purchase, by geo and niche</span></p>
+        </div>
         <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience: led a buying team with in-house production and ran my own ad agency. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
         <div class="hero-cta">
           <a class="btn btn-accent" href="#contact">Discuss a project</a>
@@ -416,11 +419,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
     </div>
 
-    <div class="vf-meta" aria-hidden="true"><span><i>●</i> REC · RESULTS</span><span>LIFETIME · ALL GEOS</span></div>
     <div class="kpis brk" id="results">
       <div class="kpi"><span class="chip">volume</span><div class="v">10,000<span class="u">+</span></div><div class="l">creatives produced personally</div></div>
       <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
-      <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">CPA per purchase</div></div>
+      <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">average CPA per purchase, depending on geo and niche</div></div>
       <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>50K<span class="u">+</span></div><div class="l">spend my creatives hold and keep scaling past, without burning out early</div></div>
       <div class="kpi"><span class="chip org">organic</span><div class="v">25K<span class="u">+</span></div><div class="l">subscribers on an AI-driven channel network, grown from zero</div></div>
       <div class="kpi"><span class="chip org">organic</span><div class="v">12M<span class="u">+</span></div><div class="l">views in a single month</div></div>
@@ -558,7 +560,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <li><span class="dot">1</span><div><b>Task</b><span>Lower trial cost in the US and find creatives that survive scaling.</span></div></li>
           <li><span class="dot">2</span><div><b>Creatives</b><span>Fast iteration on hooks and angles, AI-UGC and native formats.</span></div></li>
           <li class="hot"><span class="dot">3</span><div><b>Trial flood</b><span>Trial CPA dropped to $1–2, winners kept performing past $50K spend.</span></div></li>
-          <li class="hot"><span class="dot">4</span><div><b>Trials turn into subscriptions</b><span>Users from these creatives started trials and went on to pay for subscriptions. Their payments became the core of $1M+ revenue.</span></div></li>
+          <li class="hot"><span class="dot">4</span><div><b>Trials turn into subscriptions</b><span>Users from these creatives started trials and went on to pay for subscriptions, at an average CPA of $10–25 per purchase depending on geo and niche. Their payments became the core of $1M+ revenue.</span></div></li>
           <li><span class="dot">5</span><div><b>Account move</b><span>To lower the App Store commission, the client moved the app to a new developer account.</span></div></li>
         </ol>
       </div>
@@ -570,6 +572,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         </div>
         <div class="fnums">
           <div><b>$1–2</b><span>CPA per trial</span></div>
+          <div><b>$10–25</b><span>avg CPA per purchase, by geo and niche</span></div>
           <div><b>$50K+</b><span>spend held by winners</span></div>
         </div>
       </div>
