@@ -24,5 +24,6 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v7` | Free audit of 3 creatives offer, sticky mobile CTA, fix mobile page width |
 | `version/v8` | Link preview (OG tags + og.png cover), new Background section, page title without placeholder name |
 | `version/v9` | Full-cycle advantage: one specialist does script, generation and editing (Edge panel + Work note) |
+| `version/v10` | "3–4 people" → "a team" in the full-cycle comparison |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
