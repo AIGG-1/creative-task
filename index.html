@@ -361,6 +361,19 @@ footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-s
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media(prefers-reduced-motion:reduce){.marquee-track{animation:none}html{scroll-behavior:auto}}
+
+/* SHARP CORNERS + VIEWFINDER FRAMES */
+:root{--radius:4px}
+.btn,.filter,.lane-body li,.cmp-row,.cmp-row .chips span,.ftabs,.ftab,.abtest span,.win,.meta span,.feature,.panel,.vid-frame,.funnel li,.spend,.brief,.offer,.offer a,.ab-card,.kpis,.bgx,.kpi .chip,.engine .col span,.vid-ph .t,.case-nums,.funnel .feed{border-radius:4px}
+.funnel .feed{border-radius:0 4px 4px 0}
+.brk{position:relative;overflow:visible!important}
+.brk::after{content:"";position:absolute;inset:-9px;pointer-events:none;z-index:3;--c:var(--accent);--l:18px;--w:2px;
+ background:
+ linear-gradient(var(--c),var(--c)) top left/var(--l) var(--w) no-repeat,linear-gradient(var(--c),var(--c)) top left/var(--w) var(--l) no-repeat,
+ linear-gradient(var(--c),var(--c)) top right/var(--l) var(--w) no-repeat,linear-gradient(var(--c),var(--c)) top right/var(--w) var(--l) no-repeat,
+ linear-gradient(var(--c),var(--c)) bottom left/var(--l) var(--w) no-repeat,linear-gradient(var(--c),var(--c)) bottom left/var(--w) var(--l) no-repeat,
+ linear-gradient(var(--c),var(--c)) bottom right/var(--l) var(--w) no-repeat,linear-gradient(var(--c),var(--c)) bottom right/var(--w) var(--l) no-repeat}
+@media(max-width:600px){.brk::after{inset:-7px;--l:14px}}
 </style>
 </head>
 <body>
@@ -391,7 +404,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <p class="ab-h">I make beautiful, creative content</p>
         <p class="ab-s">Pretty, on-brand, and nobody knows if it pays back.</p>
       </div>
-      <div class="ab-card ab-b">
+      <div class="ab-card ab-b brk">
         <div class="lab"><b>B</b><span class="win">● WINNER · SCALING</span></div>
         <h1><span class="ln">Ad creatives with</span> <span class="ln"><em><span class="nw">$1–2</span> trial CPA</em> in the US</span> <span class="ln">Scaled on <span class="nw">$50K+</span></span></h1>
         <p class="spend"><b>$1M+</b><span>total ad spend on my creatives over a few months</span></p>
@@ -404,7 +417,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
 
     <div class="vf-meta" aria-hidden="true"><span><i>●</i> REC · RESULTS</span><span>LIFETIME · ALL GEOS</span></div>
-    <div class="kpis" id="results">
+    <div class="kpis brk" id="results">
       <div class="kpi"><span class="chip">volume</span><div class="v">10,000<span class="u">+</span></div><div class="l">creatives produced personally</div></div>
       <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>1–2</div><div class="l">CPA per trial subscription, US and other geos</div></div>
       <div class="kpi"><span class="chip paid">paid</span><div class="v"><span class="u">$</span>10–25</div><div class="l">CPA per purchase</div></div>
@@ -468,7 +481,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <p>Three things most creative leads don't have: I make the creatives myself, I have my own AI tool for finding what converts, and I get live UA data from every step of the funnel, in apps and web2web.</p>
     </div>
     <div class="edge">
-      <div class="panel solo">
+      <div class="panel solo brk">
         <div class="solo-copy">
           <span class="k">Full cycle, one person</span>
           <h3>Concept and execution in one pair of hands</h3>
@@ -537,7 +550,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <p>Most client work is under NDA, so product names are hidden. The numbers are real.</p>
     </div>
 
-    <article class="feature">
+    <article class="feature brk">
       <div class="feature-l">
         <div class="meta"><span>Paid · Subscription app</span><span>US / Tier-1</span></div>
         <h3>So many paying users the client had to move the app to a new developer account</h3>
@@ -699,7 +712,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       </div>
     </div>
     <div class="contact-side">
-    <div class="offer">
+    <div class="offer brk">
       <small>Free</small>
       <h4>Audit of 3 of your creatives</h4>
       <p>Send links to 3 of your ads. You get a breakdown of hooks, angles and structure, plus what to test next.</p>
