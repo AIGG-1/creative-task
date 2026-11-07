@@ -32,3 +32,9 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v15` | Emerald accent (#2FD48A), less accent area, warm white text; favicon and link cover recolored |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
+
+## Reserve variants
+
+| Branch | What it is |
+|---|---|
+| `variant/pistachio` | v14 with a pistachio accent (#B5E07A) instead of acid lime, kept in reserve |
