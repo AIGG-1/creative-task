@@ -32,6 +32,7 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v15` | Emerald accent (#2FD48A), less accent area, warm white text; favicon and link cover recolored |
 | `version/v16` | Pistachio accent (#B5E07A) with full accent fills, as in the palette preview; favicon and link cover recolored |
 | `version/v17` | Hand-drawn notes: arrow into the winner card, sad face on A, underline, circled stat, star on $1M+, "that's me", "start here"; sketch icons beside Paid / Organic / Content |
+| `version/v18` | Niche cast: 8 hand-drawn characters (News, Esoterics, Utilities, Kids, Fitness, Pets, Language learning, AI Companions) under the niche list |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
 
