@@ -427,7 +427,30 @@ h1 em{position:relative}
   .bgc-wall .w{width:700px;right:-300px;opacity:.16}
   .bgc-wall{-webkit-mask-image:linear-gradient(90deg,transparent 35%,#000 90%);mask-image:linear-gradient(90deg,transparent 35%,#000 90%)}
 }
-</style>
+
+.ofeat{margin-top:40px;--accent:var(--accent-2)}
+.ofeat.brk::after{--c:var(--accent-2)}
+.ofeat .meta span:first-child{color:var(--accent-2);border-color:color-mix(in srgb,var(--accent-2) 40%,transparent)}
+.obig{background:var(--accent-2)!important;color:var(--accent-ink)!important;flex:none!important}
+.vids{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.vr{display:grid;grid-template-columns:96px minmax(0,1fr) auto;gap:14px;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--line)}
+.vr b{font-family:var(--mono);font-size:26px;letter-spacing:-.03em;color:var(--accent-2)}
+.vr span{color:var(--muted);font-size:14px}
+.vr em{font-style:normal;font-family:var(--mono);font-size:13px;color:var(--text)}
+.ol{color:var(--muted);font-size:15px}
+.rl{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.rcp{display:flex;flex-direction:column;gap:10px;margin-top:auto}
+.th{display:flex;gap:10px;flex-wrap:wrap}
+.th button{padding:0;border:1px solid var(--line);border-radius:4px;background:none;cursor:zoom-in;overflow:hidden;width:132px;height:72px}
+.th img{width:100%;height:100%;object-fit:cover;object-position:left bottom;opacity:.8;transition:opacity .2s}
+.th button:hover img{opacity:1}
+.ochart{padding:22px 26px 10px;display:flex;flex-direction:column;gap:6px;border-bottom:1px solid var(--line)}
+.och{width:100%;height:auto;overflow:visible}
+.och .ax{stroke:var(--line)}.och .tk{fill:var(--muted);font:11px var(--mono)}
+.och .ln{fill:none;stroke:var(--accent-2);stroke-width:2.5}.och .ar{fill:color-mix(in srgb,var(--accent-2) 14%,transparent)}
+.och .dt{fill:var(--accent-2)}.och .ev{fill:var(--text);font:600 14px var(--mono)}
+@media(max-width:600px){.ofeat .fnums{grid-template-columns:repeat(3,minmax(0,1fr))}.ofeat .fnums div{padding:18px 14px}.ofeat .fnums b{font-size:20px}.vr{grid-template-columns:76px minmax(0,1fr)}.vr em{grid-column:2}.vr b{font-size:22px}}
+.lbx{margin:auto;border:0;padding:0;background:transparent;max-width:min(1280px,94vw);max-height:92vh}.lbx::backdrop{background:rgba(5,6,8,.88)}.lbx img{display:block;max-width:100%;max-height:86vh;border-radius:4px}.lbx form{display:flex;justify-content:flex-end;margin-bottom:8px}.lbx button{font-family:var(--mono);font-size:13px;background:var(--bg-2);color:var(--text);border:1px solid var(--line);border-radius:4px;padding:6px 12px;cursor:pointer}</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="rough" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter></defs></svg>
@@ -633,6 +656,31 @@ h1 em{position:relative}
       </div>
     </article>
 
+    <article class="feature ofeat brk" id="organic-case">
+ <div class="feature-l">
+  <div class="meta"><span>Organic · AI channel network</span><span>YouTube Shorts</span></div>
+  <h3>Three videos from one channel network: 7.8M views, zero ad spend</h3>
+  <div class="vids">
+   <div class="vr"><b>2.2M</b><span>views in the first 24 hours</span><em>18.4% CTR</em></div>
+   <div class="vr"><b>1.8M</b><span>views in 24 hours · 161% avg viewed</span><em>19.8% CTR</em></div>
+   <div class="vr"><b>3.8M</b><span>views · 185% avg viewed</span><em>18.9% CTR</em></div>
+  </div>
+  <p class="ol">Same hook and retention logic I use in paid creatives, tested on the algorithm instead of ad spend.</p>
+  <div class="rcp"><span class="rl">Receipts · YouTube Studio</span><div class="th">
+   <button type="button" data-src="proof/yt1.webp"><img src="proof/yt1-t.webp" alt="YouTube Studio: 2.2M views in 24 hours"></button>
+   <button type="button" data-src="proof/yt2.webp"><img src="proof/yt2-t.webp" alt="YouTube Studio: 3.8M views"></button>
+   <button type="button" data-src="proof/yt3.webp"><img src="proof/yt3-t.webp" alt="YouTube Studio: 1.8M views"></button></div></div>
+ </div>
+ <div class="feature-r">
+  <div class="big obig"><small>Impressions click-through rate</small><strong>18–20%</strong><p>Half of all YouTube channels sit at 2–10%.</p></div>
+  <div class="ochart"><span class="rl">First 24 hours · video 1</span><svg class="och" viewBox="0 0 520 170" role="img" aria-label="Views over the first 24 hours, reaching 2.2 million">
+<line x1="16" y1="148" x2="504" y2="148" class="ax"/>
+<text x="16" y="164" text-anchor="start" class="tk">0h</text><text x="260" y="164" text-anchor="middle" class="tk">12h</text><text x="504" y="164" text-anchor="end" class="tk">24h</text>
+<path d="M16.0 148.0 L209.2 148.0 L219.3 146.9 L239.7 140.0 L260.0 134.3 L300.7 125.1 L321.0 119.4 L341.3 110.2 L382.0 93.0 L422.7 79.3 L443.0 72.4 L463.3 58.7 L483.7 47.8 L504.0 22.0 L 504 148 L 16 148 Z" class="ar"/><path d="M16.0 148.0 L209.2 148.0 L219.3 146.9 L239.7 140.0 L260.0 134.3 L300.7 125.1 L321.0 119.4 L341.3 110.2 L382.0 93.0 L422.7 79.3 L443.0 72.4 L463.3 58.7 L483.7 47.8 L504.0 22.0" class="ln"/>
+<circle cx="504" cy="22" r="5" class="dt"/><text x="494" y="27" text-anchor="end" class="ev">2.2M</text></svg></div>
+  <div class="fnums"><div><b>7.8M</b><span>views, 3 videos</span></div><div><b>33M</b><span>impressions</span></div><div><b>185%</b><span>avg viewed: people rewatched</span></div></div>
+ </div></article>
+
     <div class="ledger">
       <div class="ledger-h"><span>Type</span><span>Case</span><span>Result</span></div>
       <div class="row">
@@ -641,13 +689,6 @@ h1 em{position:relative}
         <div class="n"><b>$10–25</b><span>CPA / purchase</span></div>
         <div class="n"><b>$50K+</b><span>spend held</span></div>
         <div class="n"><b>US+</b><span>geos</span></div>
-      </div>
-      <div class="row org">
-        <span class="type">Organic</span>
-        <div class="d"><h4>Channel network from zero with AI</h4><p>Formats and an AI production pipeline, launched across a network of channels.</p></div>
-        <div class="n"><b>0→25K+</b><span>subscribers</span></div>
-        <div class="n"><b>12M+</b><span>views / month</span></div>
-        <div class="n"><b>$0</b><span>ad spend</span></div>
       </div>
       <div class="row prod">
         <span class="type">Production</span>
@@ -801,6 +842,8 @@ h1 em{position:relative}
 
 <div class="mcta" id="mcta"><a class="btn btn-accent" href="https://t.me/your_handle" target="_blank" rel="noopener">Message on Telegram</a></div>
 
+<dialog class="lbx" id="lbx"><form method="dialog"><button>Close ✕</button></form><img id="lbxImg" alt="YouTube Studio screenshot"></dialog>
+
 <footer>
   <div class="wrap"><span>© <span id="yr"></span> Your Name</span><span>Creative Lead · Paid · Organic · AI</span></div>
 </footer>
@@ -904,6 +947,10 @@ fWrap.addEventListener("click", e => {
     c.innerHTML = [40,330,620,910].map((t,k) => `<div class="r" style="top:${t}px;left:${-60-k*70}px">` + Array.from({length:14}, (_, i) => tile(i + k*9 + s*5)).join("") + "</div>").join("");
     sec.prepend(c); });
 })();
+
+// receipts lightbox
+document.querySelectorAll(".th button").forEach(b=>b.addEventListener("click",()=>{const d=document.getElementById("lbx");document.getElementById("lbxImg").src=b.dataset.src;d.showModal?d.showModal():window.open(b.dataset.src);}));
+document.getElementById("lbx").addEventListener("click",e=>{if(e.target.id==="lbx")e.target.close();});
 </script>
 </body>
 </html>

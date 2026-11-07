@@ -35,6 +35,7 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v18` | Niche cast: 8 hand-drawn characters (News, Esoterics, Utilities, Kids, Fitness, Pets, Language learning, AI Companions) under the niche list |
 | `version/v19` | Background collage of 41 real creatives (bg/): tilted wall in the hero, dim rows behind Cases and Work |
 | `version/v20` | Collage order is shuffled randomly on every page load |
+| `version/v21` | Organic case card: 3 videos, 7.8M views, 18–20% CTR, 24h growth chart, YouTube Studio receipts (proof/) with lightbox |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
 
