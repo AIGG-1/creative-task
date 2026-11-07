@@ -477,7 +477,7 @@ h1 em{position:relative}
  .ptest{grid-template-columns:1fr}.ptest .th button{width:100%}}
 
 /* AUTHOR CARD in hero */
-.ab-left{display:flex;flex-direction:column;gap:150px;min-width:0}
+.ab-left{display:flex;flex-direction:column;gap:20px;min-width:0}
 .me-card{border:1px solid var(--line);border-radius:var(--radius);background:var(--bg);padding:28px;display:flex;flex-direction:column;gap:14px}
 .me-top{display:flex;gap:16px;align-items:center}
 .me-ph{width:64px;height:64px;flex:none;border-radius:50%;border:1.5px dashed var(--muted);display:grid;place-items:center;font-family:var(--mono);font-size:10px;color:var(--muted)}
@@ -487,6 +487,13 @@ h1 em{position:relative}
 .me-f{display:flex;flex-wrap:wrap;gap:6px}.me-f span{font-family:var(--mono);font-size:12px;padding:5px 10px;border:1px solid var(--line);border-radius:4px;color:var(--text)}
 .me-l{font-weight:600;color:var(--accent);font-size:15px}.me-l:hover{text-decoration:underline}
 @media(max-width:900px){.ab-left{display:contents}.me-card{order:3}.ab-a{order:1}.ab-b{order:2}}
+
+.dd-note{position:relative;display:flex;align-items:center;margin-left:14px;color:var(--accent);pointer-events:none}
+.dd-note .hand{font-size:28px;transform:rotate(-3deg)}
+.dd-note svg{position:absolute;left:calc(100% + 4px);top:10px;width:70px;height:64px;overflow:visible;filter:url(#rough)}
+.dd-note path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.abtop{position:relative;z-index:6}
+@media(max-width:900px){.dd-note{display:none}}
 </style>
 </head>
 <body>
@@ -511,9 +518,9 @@ h1 em{position:relative}
   <div class="wrap">
     <div class="abtop">
       <div class="abtest" aria-hidden="true"><span>A/B test · headline</span><span>Audience: you</span><span class="w">● Winner found</span></div>
+      <div class="dd-note" aria-hidden="true"><span class="hand">this one paid back</span><svg viewBox="0 0 70 64"><path d="M4 10 C 34 4, 56 20, 54 54"/><path d="M42 42 L54 56 L64 42"/></svg></div>
     </div>
     <div class="ab">
-      <div class="dd dd-arrow" aria-hidden="true"><svg viewBox="0 0 240 110" aria-hidden="true"><path d="M14 90 C 60 104, 150 96, 222 52"/><path d="M200 44 L224 50 L214 74"/></svg><span class="hand">this one paid back</span></div>
       <div class="ab-left">
       <div class="ab-card ab-a" aria-hidden="true">
           <div class="lab"><b class="a-lab">A <span class="sad"><svg viewBox="0 0 70 60" aria-hidden="true"><circle cx="35" cy="30" r="24"/><circle cx="27" cy="25" r="1.5"/><circle cx="43" cy="25" r="1.5"/><path d="M24 42 C 30 36, 40 36, 46 42"/></svg></span></b><span class="k">✕ Killed</span></div>

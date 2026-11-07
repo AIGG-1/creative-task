@@ -38,6 +38,7 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v21` | Organic case card: 3 videos, 7.8M views, 18–20% CTR, 24h growth chart, YouTube Studio receipts (proof/) with lightbox |
 | `version/v22` | Trial CPA claim changed to ~$2 avg / <$1 best everywhere; Ads Manager proof table (5 creatives, $43.8K, 21.7K trials) + receipts; 25-creative test proof in Process; link cover updated |
 | `version/v23` | Author card "Hey, I'm a Creative Lead" in the empty hero space (photo placeholder, intro, facts, Telegram); intro text moved out of card B; stat circle resized |
+| `version/v24` | Author card sits right under card A; "this one paid back" note moved next to "Winner found" with an arrow down into card B |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
 
