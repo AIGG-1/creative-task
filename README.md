@@ -25,5 +25,6 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v8` | Link preview (OG tags + og.png cover), new Background section, page title without placeholder name |
 | `version/v9` | Full-cycle advantage: one specialist does script, generation and editing (Edge panel + Work note) |
 | `version/v10` | "3–4 people" → "a team" in the full-cycle comparison |
+| `version/v11` | A/B-test hero (A killed / B winner), REC · RESULTS label above stats, subtle film grain |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
