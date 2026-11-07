@@ -3,8 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Your Name — Creative Lead</title>
-<meta name="description" content="Creative Lead & Producer with a media-buying background. Ad creatives with $1–2 trial CPA in the US that hold $50K+ spend. Paid, organic and AI content.">
+<title>Creative Lead · Performance & AI Creatives</title>
+<meta name="description" content="Creative Lead with a media-buying background. Ad creatives with $1–2 trial CPA in the US, $1M+ total spend, 10,000+ creatives. Paid, organic and AI content.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aigg-1.github.io/creative-task/">
+<meta property="og:title" content="Creative Lead · Performance & AI Creatives">
+<meta property="og:description" content="Ad creatives with $1–2 trial CPA in the US. $1M+ total spend, 10,000+ creatives. Paid, organic and AI content.">
+<meta property="og:image" content="https://aigg-1.github.io/creative-task/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://aigg-1.github.io/creative-task/og.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -90,8 +99,8 @@ h1 .ln{display:block}
 @keyframes scroll{to{transform:translateX(-50%)}}
 
 /* SHARED SECTION HEADER — the thread that ties all blocks together */
-section{padding-block:104px}
-section.band{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+section{padding-block:104px;--sec-bg:var(--bg)}
+section.band{--sec-bg:var(--bg-2);background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .sh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:24px 48px;align-items:end;margin-bottom:56px}
 .sh .tag{grid-column:1/-1}
 h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font-weight:700}
@@ -212,7 +221,7 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 .node h4{font-size:19px;letter-spacing:-.01em}
 .node p{color:var(--muted);font-size:14px}
 .return{position:absolute;left:26px;right:calc((100% - 64px) / 5 - 26px);bottom:0;height:30px;border:1px dashed var(--line);border-top:0;border-radius:0 0 16px 16px}
-.return span{position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);background:var(--bg-2);padding:0 12px;font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.return span{position:absolute;left:50%;bottom:-11px;transform:translateX(-50%);background:var(--sec-bg);padding:0 12px;font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
 @media(max-width:1000px){
   .loop{grid-template-columns:1fr;gap:0;padding-bottom:0;padding-left:0}
   .node{display:grid;grid-template-columns:52px minmax(0,1fr);gap:4px 18px;padding-bottom:26px}
@@ -262,6 +271,21 @@ h2{font-size:clamp(30px,4.4vw,54px);line-height:1.04;letter-spacing:-.035em;font
 @media(max-width:900px){.edge{grid-template-columns:1fr}.panel{padding:28px}}
 @media(max-width:480px){.engine{grid-template-columns:1fr}.engine .core{justify-self:center}.engine .lbl{display:none}}
 
+
+/* BACKGROUND (about) */
+.bgx{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.bgx article{background:var(--sec-bg);padding:36px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.bgx .role{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.bgx h3{font-size:22px;letter-spacing:-.02em;line-height:1.2}
+.bgx p{color:var(--muted);font-size:15px}
+.bgx .stat{margin-top:auto;padding-top:10px;display:flex;align-items:baseline;gap:10px}
+.bgx .stat b{font-family:var(--mono);font-size:34px;letter-spacing:-.03em;color:var(--accent);line-height:1}
+.bgx .stat span{font-size:13px;color:var(--muted)}
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-top:56px}
+.skill{border-top:2px solid var(--accent);padding-top:20px;font-size:19px;letter-spacing:-.01em;line-height:1.35}
+.skill small{display:block;font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:10px}
+@media(max-width:860px){.bgx{grid-template-columns:1fr}.bgx article{padding:28px}.skills{grid-template-columns:1fr;gap:28px}}
+
 /* CONTACT */
 .contact{padding-block:120px}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:48px;align-items:center}
@@ -302,6 +326,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <a href="#services">Services</a>
       <a href="#edge">Edge</a>
       <a href="#cases">Cases</a>
+      <a href="#background">Background</a>
       <a href="#work">Work</a>
       <a href="#process">Process</a>
     </div>
@@ -314,7 +339,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <span class="tag">Creative Lead · Creative Producer</span>
     <h1><span class="ln">Ad creatives with</span> <span class="ln"><em><span class="nw">$1–2</span> trial CPA</em> in the US</span> <span class="ln">Scaled on <span class="nw">$50K+</span></span></h1>
     <p class="spend"><b>$1M+</b><span>total ad spend on my creatives over a few months</span></p>
-    <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
+    <p class="lead">Creative Lead with a <b>media-buying background</b> and team management experience: led a buying team with in-house production and ran my own ad agency. I build ad creatives and AI content for <b>paid</b> and <b>organic</b> growth, and I judge them by CPA, not likes.</p>
     <div class="hero-cta">
       <a class="btn btn-accent" href="#contact">Discuss a project</a>
       <a class="btn btn-ghost" href="#cases">See the cases ↓</a>
@@ -486,8 +511,50 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </div>
 </section>
 
+<!-- BACKGROUND -->
+<section id="background" class="band">
+  <div class="wrap">
+    <div class="sh">
+      <span class="tag">Background</span>
+      <h2>I've sat on the buyer's side of the table</h2>
+      <p>Before leading creative, I ran traffic. I know what a creative has to do after the click, because I used to pay for it.</p>
+    </div>
+    <div class="bgx">
+      <article>
+        <span class="role">Team lead · Media buying</span>
+        <h3>Led a media buying team with its own production</h3>
+        <p>Worked with creatives and traffic for offers from many different advertisers. Hired people and set up how the departments work.</p>
+        <div class="stat"><b>In-house</b><span>production</span></div>
+      </article>
+      <article>
+        <span class="role">Hands-on</span>
+        <h3>Built everything traffic runs through</h3>
+        <p>Personally made videos, landing pages, apps and games to route and convert traffic.</p>
+        <div class="stat"><b>4</b><span>formats: video, landings, apps, games</span></div>
+      </article>
+      <article>
+        <span class="role">App production · ASO</span>
+        <h3>Set up streamlined Android and iOS app production</h3>
+        <p>Apps for traffic arbitrage through ASO, each with its own unique creatives.</p>
+        <div class="stat"><b>100+</b><span>apps published in the stores</span></div>
+      </article>
+      <article>
+        <span class="role">Founder · Agency</span>
+        <h3>Ran my own advertising agency</h3>
+        <p>Launched promos, organized the work and produced projects end to end.</p>
+        <div class="stat"><b>Own</b><span>ad agency</span></div>
+      </article>
+    </div>
+    <div class="skills">
+      <div class="skill"><small>Conversion</small>I know how to turn views and users into leads, sales and other target actions.</div>
+      <div class="skill"><small>Algorithms</small>I know how platform algorithms work and how to lift CTR and retention.</div>
+      <div class="skill"><small>Tools</small>I'm fluent in the tools needed for conversions of any complexity.</div>
+    </div>
+  </div>
+</section>
+
 <!-- 3 · NICHES -->
-<section id="niches" class="band">
+<section id="niches">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Niches</span>
@@ -499,7 +566,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- 4 · WORK -->
-<section id="work">
+<section id="work" class="band">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Work</span>
@@ -512,7 +579,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- 5 · PROCESS -->
-<section id="process" class="band">
+<section id="process">
   <div class="wrap">
     <div class="sh">
       <span class="tag">Process</span>
@@ -542,7 +609,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </section>
 
 <!-- CONTACT -->
-<section class="contact" id="contact">
+<section class="contact band" id="contact">
   <div class="wrap contact-grid">
     <div>
       <span class="tag">Contact</span>
@@ -606,7 +673,7 @@ const VIDEOS = [
 const NICHES = ["News","Esoterics","Utilities","Kids","Health & Fitness","Pets","IQ & Self-improvement","Fashion & Style","Mini-dramas","AI Photo & Video editors","AR Drawing","AI Companions","AI Assistants","Language learning","and more"];
 
 const MARQUEE = [
-  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","total spend"],["$1M+","revenue from paid subs"],["Apps","+ web2web"],["25K+","organic subs"],["12M+","views / month"],["14+","niches"]
+  ["10,000+","creatives"],["$1–2","trial CPA"],["$10–25","purchase CPA"],["$50K+","spend held"],["$1M+","total spend"],["$1M+","revenue from paid subs"],["Apps","+ web2web"],["25K+","organic subs"],["12M+","views / month"],["14+","niches"],["100+","apps in stores"]
 ];
 /* ======================================================= */
 

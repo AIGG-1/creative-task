@@ -22,5 +22,6 @@ Every change to the site is saved as its own branch `version/vN`. `main` is alwa
 | `version/v5` | Niches: AI Photo & Video editors, AI Assistants, Language learning |
 | `version/v6` | 14+ niches, updated toolkit (AI video, AI image & sound) |
 | `version/v7` | Free audit of 3 creatives offer, sticky mobile CTA, fix mobile page width |
+| `version/v8` | Link preview (OG tags + og.png cover), new Background section, page title without placeholder name |
 
 To roll back, the live site is pointed at an older version: `git push --force origin version/v2:main`.
