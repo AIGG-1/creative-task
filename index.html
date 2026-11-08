@@ -494,6 +494,30 @@ h1 em{position:relative}
 .dd-note path{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
 .abtop{position:relative;z-index:6}
 @media(max-width:900px){.dd-note{display:none}}
+
+/* AI FLOW */
+.flow{display:flex;flex-direction:column;align-items:stretch;gap:0;margin-top:8px}
+.fl-l{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.flow .fl-l:not(:first-child){margin-top:4px}
+.fl-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.fl-row span{font-family:var(--mono);font-size:12px;text-align:center;padding:9px 6px;border:1px solid var(--line);border-radius:4px;background:var(--bg-2);color:var(--muted)}
+.fl-row.out span{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.fl-pipe{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));height:30px}
+.fl-pipe.one{grid-template-columns:1fr}
+.fl-pipe i{position:relative;justify-self:center;width:1px;height:100%;background:var(--line);overflow:visible}
+.fl-pipe i::after{content:"";position:absolute;left:-2px;top:0;width:5px;height:5px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);animation:flow 1.8s linear infinite}
+.fl-pipe i:nth-child(2)::after{animation-delay:.6s}.fl-pipe i:nth-child(3)::after{animation-delay:1.2s}
+@keyframes flow{from{top:0;opacity:0}15%{opacity:1}85%{opacity:1}to{top:calc(100% - 5px);opacity:0}}
+.fl-core{display:flex;justify-content:center}
+.fl-core span{font-family:var(--mono);font-size:13px;font-weight:600;color:var(--accent-ink);background:var(--accent);padding:14px 28px;border-radius:999px;box-shadow:0 0 0 8px color-mix(in srgb,var(--accent) 12%,transparent),0 0 40px color-mix(in srgb,var(--accent) 25%,transparent)}
+.fl-next{align-self:center;font-family:var(--mono);font-size:12px;color:var(--accent);padding:8px 14px;border:1px dashed color-mix(in srgb,var(--accent) 50%,transparent);border-radius:4px}
+.finding{margin-top:18px;padding:16px 18px;border-left:2px solid var(--accent);background:var(--bg-2);display:flex;flex-direction:column;gap:6px}
+.finding .fl-l{margin:0;color:var(--accent)}
+.finding p{font-size:14px;color:var(--muted);margin:0}.finding b{color:var(--text);font-weight:600}
+.finding .fd{color:var(--text)}
+@media(prefers-reduced-motion:reduce){.fl-pipe i::after{animation:none;top:40%}}
+@media(max-width:480px){.fl-row span{font-size:11px;padding:8px 4px}}
+.panel.org .ftabs{margin-top:8px}.panel.org .funnel{margin-top:6px;gap:10px}.panel.org .funnel li{padding:18px 16px}.panel.org .feed-l{margin-top:auto}
 </style>
 </head>
 <body>
@@ -636,11 +660,21 @@ h1 em{position:relative}
         <span class="k">Own AI system</span>
         <h3>An AI system I built that works alongside me</h3>
         <p>It analyzes creative performance and surfaces the patterns that lift conversion and the rest of the metrics. I turn those patterns into the next round of creatives.</p>
-        <div class="engine" aria-label="Creative data goes into the AI system, which returns patterns that lift metrics">
-          <div class="lbl"><span>Input</span><span>Output</span></div>
-          <div class="col"><span>Creatives</span><span>Ad metrics</span><span>Funnel data</span></div>
-          <div class="core">AI<br>patterns</div>
-          <div class="col out"><span>Winning hooks</span><span>Angles</span><span>Formats</span></div>
+        <div class="flow" role="img" aria-label="Creatives, ad metrics and funnel data go into the AI system, which finds winning hooks, angles and formats for the next round of creatives">
+          <span class="fl-l">What it reads</span>
+          <div class="fl-row"><span>Creatives</span><span>Ad metrics</span><span>Funnel data</span></div>
+          <div class="fl-pipe" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="fl-core"><span>AI patterns</span></div>
+          <div class="fl-pipe" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="fl-l">What it finds</span>
+          <div class="fl-row out"><span>Winning hooks</span><span>Angles</span><span>Formats</span></div>
+          <div class="fl-pipe one" aria-hidden="true"><i></i></div>
+          <div class="fl-next">↺ next round of creatives</div>
+        </div>
+        <div class="finding">
+          <span class="fl-l">Example signal · from the Ads Manager case below</span>
+          <p>Creatives #1–2 took <b>63% of the spend</b> at <b>$2.87</b> per trial. Creatives #4–5 brought trials at <b>$0.90</b>, about <b>3× cheaper</b>.</p>
+          <p class="fd">→ Shift budget to #4–5 and build the next variations on their hooks.</p>
         </div>
       </div>
       <div class="panel org">
